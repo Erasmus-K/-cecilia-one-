@@ -1519,15 +1519,13 @@ export function App() {
       </div>
       <main className="flex-grow">
         <ScrollToTop />
-        <AnimatePresence mode="wait" initial={false}>
-          <Routes location={location}>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="/research" element={<ResearchPage />} />
-            <Route path="/partnerships" element={<PartnershipsPage />} />
-            <Route path="/contact" element={<ContactPage />} />
-          </Routes>
-        </AnimatePresence>
+        <Routes location={location}>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/research" element={<ResearchPage />} />
+          <Route path="/partnerships" element={<PartnershipsPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+        </Routes>
       </main>
       <Footer />
     </div>

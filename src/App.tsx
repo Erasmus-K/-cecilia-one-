@@ -81,6 +81,10 @@ const KNOWLEDGE_BASE: KnowledgeEntry[] = [
   },
 ];
 
+/** Official mark (Cloudinary); used in header and footer. */
+const WNSC_LOGO_URL =
+  "https://res.cloudinary.com/dpskjlq9m/image/upload/f_auto,q_auto/v1776848787/Screenshot_2026-04-22_at_12-06-13_The_White_Nile_And_Dudd_Centre-2.pdf_a4kdtd.png";
+
 // --- Components ---
 
 const FadeInSection = ({ children, delay = 0, y = 20 }: { children: ReactNode, delay?: number, y?: number, key?: React.Key }) => (
@@ -304,7 +308,7 @@ const Navbar = () => {
         <Link to="/" className="flex items-center gap-3 group" aria-label="WNSC Home">
           <div className="relative">
             <img 
-              src="https://res.cloudinary.com/dpskjlq9m/image/upload/v1776848787/Screenshot_2026-04-22_at_12-06-13_The_White_Nile_And_Dudd_Centre-2.pdf_a4kdtd.png" 
+              src={WNSC_LOGO_URL} 
               alt="WNSC Logo" 
               className={`h-10 md:h-12 w-auto object-contain transition-all duration-300 ${scrolled ? 'scale-90' : 'scale-100'}`}
               referrerPolicy="no-referrer"
@@ -416,65 +420,145 @@ const Navbar = () => {
 };
 
 const Footer = () => (
-  <footer className="bg-water-dark text-white pt-20 pb-10">
-    <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12 border-b border-white/10 pb-16">
-      <div className="col-span-1 md:col-span-2">
-        <div className="mb-8">
-          <img 
-            src="https://res.cloudinary.com/dpskjlq9m/image/upload/v1776848787/Screenshot_2026-04-22_at_12-06-13_The_White_Nile_And_Dudd_Centre-2.pdf_a4kdtd.png" 
-            alt="WNSC Logo" 
-            className="h-16 w-auto object-contain brightness-0 invert"
-            referrerPolicy="no-referrer"
-          />
+  <footer className="bg-water-dark text-white">
+    <div className="max-w-7xl mx-auto px-6 pt-16 pb-8 sm:pt-20 sm:pb-10">
+      <div className="grid grid-cols-1 gap-12 border-b border-white/10 pb-14 lg:grid-cols-12 lg:gap-14 lg:pb-16">
+        <div className="lg:col-span-5">
+          <Link
+            to="/"
+            className="mb-8 flex flex-col items-start gap-5 sm:flex-row sm:items-center sm:gap-6 group"
+            aria-label="WNSC Home"
+          >
+            <div className="shrink-0 rounded-2xl bg-white p-3 shadow-lg ring-1 ring-white/20">
+              <img
+                src={WNSC_LOGO_URL}
+                alt="The White Nile and The Sudd Centre"
+                className="h-12 w-auto max-h-14 max-w-[220px] object-contain object-left"
+                referrerPolicy="no-referrer"
+              />
+            </div>
+            <div className="min-w-0 leading-none">
+              <span className="font-display font-black text-2xl tracking-tighter text-white uppercase transition-colors group-hover:text-water-light">
+                WNSC
+              </span>
+              <span className="mt-2 block text-[10px] font-display font-bold uppercase tracking-[0.22em] text-water-light/70">
+                Water is Life
+              </span>
+            </div>
+          </Link>
+          <p className="max-w-md text-sm leading-relaxed text-water-light/70">
+            National think tank dedicated to the scientific study, preservation, and sustainable management of South
+            Sudan’s water resources. Bridging indigenous hydrology and evidence-based policy.
+          </p>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <a
+              href="mailto:whitenilesuddcenter@gmail.com"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/5 text-water-light transition-colors hover:border-nile-blue hover:bg-nile-blue/20 hover:text-white"
+              aria-label="Email"
+            >
+              <Mail size={18} />
+            </a>
+            <a
+              href="tel:+211914789322"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/5 text-water-light transition-colors hover:border-nile-blue hover:bg-nile-blue/20 hover:text-white"
+              aria-label="Phone"
+            >
+              <Phone size={18} />
+            </a>
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=Nile+Block+4+Ministry+Complex+Juba+South+Sudan"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/5 text-water-light transition-colors hover:border-nile-blue hover:bg-nile-blue/20 hover:text-white"
+              aria-label="Open location in maps"
+            >
+              <MapPin size={18} />
+            </a>
+          </div>
         </div>
-        <p className="text-water-light/60 max-w-md leading-relaxed mb-6">
-          National think tank dedicated to the scientific study, preservation, and sustainable management 
-          of South Sudan’s water resources. Bridging the gap between indigenous hydrology and evidence-based policy.
-        </p>
-                <div className="flex gap-4">
-                  <a href="mailto:whitenilesuddcenter@gmail.com" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/10 transition-colors">
-                    <Mail size={18} />
-                  </a>
-                  <a href="tel:+211914789322" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/10 transition-colors">
-                    <Phone size={18} />
-                  </a>
-                  <a href="#" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/10 transition-colors">
-                    <MapPin size={18} />
-                  </a>
-                </div>
+
+        <div className="grid grid-cols-1 gap-10 sm:grid-cols-3 lg:col-span-7 lg:gap-12">
+          <div>
+            <h4 className="mb-5 font-display text-[10px] font-black uppercase tracking-[0.28em] text-white/90">
+              Resources
+            </h4>
+            <ul className="space-y-3 text-sm text-water-light/65">
+              <li>
+                <Link to="/research" className="transition-colors hover:text-white">
+                  Scientific Archive
+                </Link>
+              </li>
+              <li>
+                <Link to="/research" className="transition-colors hover:text-white">
+                  Environmental Impact
+                </Link>
+              </li>
+              <li>
+                <Link to="/partnerships" className="transition-colors hover:text-white">
+                  Strategic Partners
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact" className="transition-colors hover:text-white">
+                  Stakeholder Briefing
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="mb-5 font-display text-[10px] font-black uppercase tracking-[0.28em] text-white/90">
+              Organization
+            </h4>
+            <ul className="space-y-3 text-sm text-water-light/65">
+              <li>
+                <Link to="/about" className="transition-colors hover:text-white">
+                  Our Mission
+                </Link>
+              </li>
+              <li>
+                <Link to="/about" className="transition-colors hover:text-white">
+                  Leadership
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact" className="transition-colors hover:text-white">
+                  Media Centre
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact" className="transition-colors hover:text-white">
+                  Careers
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="mb-5 font-display text-[10px] font-black uppercase tracking-[0.28em] text-white/90">
+              Headquarters
+            </h4>
+            <p className="text-sm leading-relaxed text-water-light/65">
+              Nile Block 4, Ministry Complex
+              <br />
+              Juba, South Sudan
+            </p>
+            <p className="mt-4 text-xs uppercase tracking-widest text-water-light/40">Field liaison +211 914 789 322</p>
+          </div>
+        </div>
       </div>
-      <div>
-        <h4 className="font-semibold mb-6">Resources</h4>
-        <ul className="space-y-4 text-water-light/60 text-sm">
-          <li><Link to="/research" className="hover:text-white transition-colors">Scientific Archive</Link></li>
-          <li><Link to="/research" className="hover:text-white transition-colors">Environmental Impact</Link></li>
-          <li><Link to="/partnerships" className="hover:text-white transition-colors">Strategic Partners</Link></li>
-          <li><Link to="/contact" className="hover:text-white transition-colors">Stakeholder Briefing</Link></li>
-        </ul>
-      </div>
-      <div>
-        <h4 className="font-semibold mb-6">Organization</h4>
-        <ul className="space-y-4 text-water-light/60 text-sm">
-          <li><Link to="/about" className="hover:text-white transition-colors">Our Mission</Link></li>
-          <li><Link to="/about" className="hover:text-white transition-colors">Leadership</Link></li>
-          <li><Link to="/contact" className="hover:text-white transition-colors">Media Centre</Link></li>
-          <li><Link to="/contact" className="hover:text-white transition-colors">Careers</Link></li>
-        </ul>
-      </div>
-      <div>
-        <h4 className="font-semibold mb-6">Headquarters</h4>
-        <p className="text-water-light/60 text-sm leading-relaxed">
-          Nile Block 4, Ministry Complex<br />
-          Ministry Complex Area<br />
-          Juba, South Sudan
-        </p>
-      </div>
-    </div>
-    <div className="max-w-7xl mx-auto px-6 pt-10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-medium text-water-light/40 uppercase tracking-widest">
-      <p>© {new Date().getFullYear()} WNSC. All Rights Reserved.</p>
-      <div className="flex gap-6">
-        <a href="#" className="hover:text-white">Privacy Policy</a>
-        <a href="#" className="hover:text-white">Terms of Service</a>
+
+      <div className="mt-10 flex flex-col items-center justify-between gap-6 border-t border-white/5 pt-8 text-[10px] font-bold uppercase tracking-[0.2em] text-water-light/45 sm:flex-row sm:items-center sm:pt-10">
+        <p className="text-center sm:text-left">© {new Date().getFullYear()} WNSC. All rights reserved.</p>
+        <div className="flex flex-wrap items-center justify-center gap-6 sm:justify-end">
+          <a href="#" className="transition-colors hover:text-white">
+            Privacy
+          </a>
+          <span className="hidden text-white/15 sm:inline" aria-hidden>
+            |
+          </span>
+          <a href="#" className="transition-colors hover:text-white">
+            Terms
+          </a>
+        </div>
       </div>
     </div>
   </footer>

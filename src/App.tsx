@@ -661,7 +661,7 @@ const HomePage = () => {
                 title: "Press Release: Conclusion of the Sudd Wetland Hybrid Global Conference",
                 category: "Climate",
                 date: "May 2, 2026",
-                image: "https://images.unsplash.com/photo-1544333323-5374438186f2?auto=format&fit=crop&q=80&w=800"
+                image: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=80&w=800"
               }
             ].map((news, i) => (
               <motion.div 

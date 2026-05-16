@@ -60,7 +60,7 @@ export async function submitStakeholderBriefing(
       message:
         data.message ??
         data.body?.message ??
-        'The briefing could not be sent. Please try again or email whitenilesuddcenter@gmail.com.',
+        'The briefing could not be sent. Please try again or email info@wnscss.org.',
     };
   }
 

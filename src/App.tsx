@@ -454,7 +454,7 @@ const Footer = () => (
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <a
-              href="mailto:whitenilesuddcenter@gmail.com"
+              href="mailto:info@wnscss.org"
               className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/5 text-water-light transition-colors hover:border-nile-blue hover:bg-nile-blue/20 hover:text-white"
               aria-label="Email"
             >
@@ -1390,7 +1390,7 @@ const ContactPage = () => {
                     </div>
                     <div>
                       <h4 className="font-black text-[10px] uppercase tracking-widest text-water-light/30 mb-2">Digital Secretariat</h4>
-                      <p className="text-xl font-bold">whitenilesuddcenter@gmail.com</p>
+                      <p className="text-xl font-bold">info@wnscss.org</p>
                       <p className="text-sm text-water-light/50 mt-1 italic font-light">Stakeholder Correspondence</p>
                     </div>
                   </div>

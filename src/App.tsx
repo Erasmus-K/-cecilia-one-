@@ -30,8 +30,10 @@ import {
   Zap,
   CheckCircle2,
   Globe2,
-  Download
+  Download,
+  Loader2
 } from 'lucide-react';
+import { submitStakeholderBriefing } from './lib/submitStakeholderBriefing';
 
 // --- Static knowledge index (curated topics; no external API) ---
 type KnowledgeEntry = { title: string; summary: string; tags: string[]; type: string };
@@ -1263,6 +1265,9 @@ const PartnershipsPage = () => {
 
 const ContactPage = () => {
   const [submitted, setSubmitted] = useState(false);
+  const [submittedEmail, setSubmittedEmail] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -1306,11 +1311,24 @@ const ContactPage = () => {
     }
   };
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    if (validate()) {
-      setSubmitted(true);
+    if (!validate()) return;
+
+    setSubmitError(null);
+    setIsSubmitting(true);
+
+    const result = await submitStakeholderBriefing(formData);
+
+    setIsSubmitting(false);
+
+    if (result.ok === false) {
+      setSubmitError(result.message);
+      return;
     }
+
+    setSubmittedEmail(formData.email);
+    setSubmitted(true);
   };
 
   return (
@@ -1413,10 +1431,16 @@ const ContactPage = () => {
                     </div>
                     <h3 className="text-4xl font-display font-black text-slate-900 mb-6 tracking-tight">Briefing Logged.</h3>
                     <p className="text-slate-500 mb-12 max-w-sm mx-auto text-lg font-light">
-                      Your inquiry has been successfully registered in our stakeholder database. Our coordination team will respond within 48 hours.
+                      Your briefing has been emailed to our coordination team. We will respond at{' '}
+                      <span className="font-semibold text-slate-700">{submittedEmail}</span> within 48 hours.
                     </p>
                     <button 
-                      onClick={() => { setSubmitted(false); setFormData({ name: '', email: '', department: '', message: '' }); }}
+                      onClick={() => {
+                        setSubmitted(false);
+                        setSubmittedEmail('');
+                        setSubmitError(null);
+                        setFormData({ name: '', email: '', department: '', message: '' });
+                      }}
                       className="px-10 py-4 bg-slate-900 text-white rounded-2xl font-bold shadow-lg hover:bg-nile-blue transition-all"
                     >
                       Log Another Briefing
@@ -1490,9 +1514,30 @@ const ContactPage = () => {
                       {errors.message && <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-red-500 text-[10px] uppercase font-black tracking-widest pl-4">{errors.message}</motion.p>}
                     </div>
 
-                    <button type="submit" className="w-full py-6 bg-nile-blue text-white font-black uppercase tracking-widest rounded-3xl shadow-2xl shadow-nile-blue/20 hover:shadow-nile-blue/40 transform hover:-translate-y-1 active:scale-95 transition-all flex items-center justify-center gap-4 group overflow-hidden relative">
-                       <span className="relative z-10">Submit Stakeholder Briefing</span>
-                       <ArrowRight size={22} className="relative z-10 group-hover:translate-x-2 transition-transform" />
+                    {submitError && (
+                      <motion.p
+                        initial={{ opacity: 0, y: -8 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="text-red-600 text-sm font-medium bg-red-50 border border-red-100 rounded-2xl px-6 py-4"
+                        role="alert"
+                      >
+                        {submitError}
+                      </motion.p>
+                    )}
+
+                    <button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="w-full py-6 bg-nile-blue text-white font-black uppercase tracking-widest rounded-3xl shadow-2xl shadow-nile-blue/20 hover:shadow-nile-blue/40 transform hover:-translate-y-1 active:scale-95 transition-all flex items-center justify-center gap-4 group overflow-hidden relative disabled:opacity-70 disabled:pointer-events-none disabled:transform-none"
+                    >
+                       <span className="relative z-10">
+                         {isSubmitting ? 'Sending Briefing…' : 'Submit Stakeholder Briefing'}
+                       </span>
+                       {isSubmitting ? (
+                         <Loader2 size={22} className="relative z-10 animate-spin" />
+                       ) : (
+                         <ArrowRight size={22} className="relative z-10 group-hover:translate-x-2 transition-transform" />
+                       )}
                        <div className="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
                     </button>
                   </motion.form>

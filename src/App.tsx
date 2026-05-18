@@ -31,7 +31,9 @@ import {
   CheckCircle2,
   Globe2,
   Download,
-  Loader2
+  Loader2,
+  Facebook,
+  Linkedin
 } from 'lucide-react';
 import { submitStakeholderBriefing } from './lib/submitStakeholderBriefing';
 
@@ -84,6 +86,11 @@ const KNOWLEDGE_BASE: KnowledgeEntry[] = [
 ];
 
 /** Official mark (Cloudinary); used in header and footer. */
+const SOCIAL_LINKS = {
+  facebook: 'https://www.facebook.com/profile.php?id=61589933069155',
+  linkedin: 'https://www.linkedin.com/in/white-nile-and-sudd-center-b3b57140a/',
+} as const;
+
 const WNSC_LOGO_URL =
   "https://res.cloudinary.com/dpskjlq9m/image/upload/f_auto,q_auto/v1776848787/Screenshot_2026-04-22_at_12-06-13_The_White_Nile_And_Dudd_Centre-2.pdf_a4kdtd.png";
 
@@ -475,6 +482,24 @@ const Footer = () => (
               aria-label="Open location in maps"
             >
               <MapPin size={18} />
+            </a>
+            <a
+              href={SOCIAL_LINKS.facebook}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/5 text-water-light transition-colors hover:border-nile-blue hover:bg-nile-blue/20 hover:text-white"
+              aria-label="Facebook"
+            >
+              <Facebook size={18} />
+            </a>
+            <a
+              href={SOCIAL_LINKS.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/5 text-water-light transition-colors hover:border-nile-blue hover:bg-nile-blue/20 hover:text-white"
+              aria-label="LinkedIn"
+            >
+              <Linkedin size={18} />
             </a>
           </div>
         </div>
@@ -970,28 +995,205 @@ const AboutPage = () => {
           <FadeInSection>
             <div className="text-center max-w-3xl mx-auto mb-24">
               <span className="text-[10px] font-black uppercase tracking-[0.3em] text-nile-blue">The Collective</span>
-              <h2 className="text-5xl font-display font-black text-water-dark mt-4 tracking-tighter">The Scientific Vanguard</h2>
+              <h2 className="text-5xl font-display font-black text-water-dark mt-4 tracking-tighter">Leadership & Founding Members</h2>
+              <div className="w-20 h-1 bg-nile-blue mx-auto mt-8 rounded-full" />
+            </div>
+          </FadeInSection>
+
+          <FadeInSection delay={0.1}>
+            <article className="bg-white rounded-[4rem] p-12 md:p-20 border border-slate-100 shadow-sm mb-20 relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-72 h-72 bg-nile-blue/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 relative z-10">
+                <div className="lg:col-span-4 flex flex-col items-center lg:items-start text-center lg:text-left">
+                  <div className="w-32 h-32 bg-nile-blue/10 rounded-[2.5rem] flex items-center justify-center text-nile-blue mb-6 shadow-inner">
+                    <Users size={56} />
+                  </div>
+                  <h3 className="text-3xl font-display font-black text-slate-900 tracking-tight">Mr. Yong Kuai Kuorwel</h3>
+                  <p className="text-nile-blue text-[10px] font-black uppercase tracking-[0.2em] mt-3 mb-4">Founding Member</p>
+                  <p className="text-slate-500 text-sm font-medium leading-relaxed">
+                    Occupational Safety Officer, MINUSCA · Bangui
+                  </p>
+                </div>
+                <div className="lg:col-span-8 space-y-6 text-slate-600 text-lg leading-relaxed font-light">
+                  <p>
+                    Mr. Yong Kuai Kuorwel is a founding member of the White Nile and Sudd Centre. He currently serves with the United Nations Multidimensional Integrated Stabilization Mission in the Central African Republic (MINUSCA) as an Occupational Safety Officer, based in Bangui. He is a highly experienced professional environmentalist, urban planner, and certified occupational safety practitioner with a strong record of service across national and international organizations.
+                  </p>
+                  <p>
+                    Mr. Kuorwel brings extensive multidisciplinary expertise in occupational safety and health, energy and water management, waste management, land use planning, and natural resources management. His work focuses on promoting safe, sustainable, and environmentally responsible practices within complex operational and humanitarian settings. Throughout his career, he has contributed to the development and implementation of policies, systems, and field-level interventions that enhance environmental performance and occupational safety compliance.
+                  </p>
+                  <p>
+                    He holds a master&apos;s degree in urban and Regional Planning and a bachelor&apos;s degree in environmental management from RMIT University in Melbourne, Australia. His academic background, combined with his practical experience, positions him as a skilled practitioner in integrating environmental sustainability, urban development, and occupational safety within both development and peacekeeping contexts.
+                  </p>
+                </div>
+              </div>
+            </article>
+          </FadeInSection>
+
+          <FadeInSection delay={0.2}>
+            <article className="bg-white rounded-[4rem] p-12 md:p-20 border border-slate-100 shadow-sm mb-20 relative overflow-hidden">
+              <div className="absolute top-0 left-0 w-72 h-72 bg-wetland-green/5 rounded-full blur-3xl -translate-y-1/2 -translate-x-1/2" />
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 relative z-10">
+                <div className="lg:col-span-4 flex flex-col items-center lg:items-start text-center lg:text-left">
+                  <img
+                    src="/tong-deng-anei.png"
+                    alt="Tong Deng Anei, Executive Director"
+                    className="w-40 h-40 rounded-[2.5rem] object-cover object-top mb-6 shadow-lg border-4 border-white ring-2 ring-wetland-green/20"
+                  />
+                  <h3 className="text-3xl font-display font-black text-slate-900 tracking-tight">Tong Deng Anei</h3>
+                  <p className="text-wetland-green text-[10px] font-black uppercase tracking-[0.2em] mt-3 mb-4">Executive Director · Founding Member</p>
+                  <p className="text-slate-500 text-sm font-medium leading-relaxed">
+                    Food Security and Livelihoods Consultant · Juba, South Sudan
+                  </p>
+                </div>
+                <div className="lg:col-span-8 space-y-6 text-slate-600 text-lg leading-relaxed font-light">
+                  <p>
+                    Tong Deng Anei is the Executive Director and a founding member of the White Nile and Sudd Centre. He is a Food Security and Livelihoods Consultant based in Juba, South Sudan. Anei has over 20 years of experience designing and implementing humanitarian assistance programmes, having previously worked with the United States Agency for International Development (USAID), the United Nations, and government institutions where he served in two Ministerial positions as State Minister of Culture, Youth and Sports and State Minister of Health.
+                  </p>
+                  <p>
+                    Apart from his work at the White Nile and Sudd Centre, he currently consults with national and international organizations as well as government agencies. His research focuses on the humanitarian crisis and mass starvation in South Sudan. He also received training in Social Science through the Humanitarian Platform Skill-Building Programme, which enabled him to pursue evidence-based research and advance his professional and academic development. Anei holds a Master of Arts in Humanitarian Assistance from Tufts University.
+                  </p>
+                </div>
+              </div>
+            </article>
+          </FadeInSection>
+
+          <FadeInSection delay={0.3}>
+            <article className="bg-white rounded-[4rem] p-12 md:p-20 border border-slate-100 shadow-sm mb-20 relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-72 h-72 bg-nile-blue/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 relative z-10">
+                <div className="lg:col-span-4 flex flex-col items-center lg:items-start text-center lg:text-left">
+                  <img
+                    src="/isaac-liabwel-yol.png"
+                    alt="Eng. Isaac Liabwel C. Yol, Deputy Chairman of the Board of Trustees"
+                    className="w-40 h-40 rounded-[2.5rem] object-cover object-top mb-6 shadow-lg border-4 border-white ring-2 ring-nile-blue/20"
+                  />
+                  <h3 className="text-3xl font-display font-black text-slate-900 tracking-tight">Eng. Isaac Liabwel C. Yol</h3>
+                  <p className="text-nile-blue text-[10px] font-black uppercase tracking-[0.2em] mt-3 mb-4">Deputy Chairman · Board of Trustees</p>
+                  <p className="text-slate-500 text-sm font-medium leading-relaxed">
+                    Former Undersecretary, Ministry of Water Resources and Irrigation · South Sudan
+                  </p>
+                </div>
+                <div className="lg:col-span-8 space-y-6 text-slate-600 text-lg leading-relaxed font-light">
+                  <p>
+                    Eng. Isaac Liabwel C. Yol, former Undersecretary of the Republic of South Sudan Ministry of Water Resources and Irrigation (2006–2017), holds a BSc. (Hons) in Civil Engineering from the University of Khartoum (1985–1992); a Master of Engineering in Hydraulic Engineering from IHE Delft Institute for Water Education, the Netherlands (1998–1999); and has completed short training courses in Environment, Hydrology, Integrated Water Resources Management (IWRM), and International Water Law.
+                  </p>
+                  <p>
+                    Eng. Isaac Liabwel is bilingual, with proficiency in English and Arabic, and is conversant with knowledge and skills related to water sector planning, governance, and infrastructure. These encompass experience in water sector management, development, and utilization, in addition to partnerships in institutional development and formulation of policies with different stakeholders at all levels in support of leadership and corporate oversight.
+                  </p>
+                  <p>
+                    He is a seasoned participant in international, regional, and national forums, platforms, and meetings pertaining to water, sanitation, hygiene, and related sectors, where he interacts with transnational, national, and local actors. This has culminated in significant contributions to programmes and activities of the South Sudan water and environmental resources think-tank, the White Nile and Sudd Centre (WNSC); the regional cooperation platform, the Nile Basin Initiative (NBI); the Intergovernmental Authority on Development (IGAD) Water Unit; and World Water Week in Stockholm, Sweden.
+                  </p>
+                </div>
+              </div>
+            </article>
+          </FadeInSection>
+
+          <FadeInSection delay={0.4}>
+            <article className="bg-white rounded-[4rem] p-12 md:p-20 border border-slate-100 shadow-sm mb-20 relative overflow-hidden">
+              <div className="absolute top-0 left-0 w-72 h-72 bg-wetland-green/5 rounded-full blur-3xl -translate-y-1/2 -translate-x-1/2" />
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 relative z-10">
+                <div className="lg:col-span-4 flex flex-col items-center lg:items-start text-center lg:text-left">
+                  <img
+                    src="/james-okuk.png"
+                    alt="Dr. James Okuk, Lead Consultant on Water and Wetlands Geopolitics"
+                    className="w-40 h-40 rounded-[2.5rem] object-cover object-top mb-6 shadow-lg border-4 border-white ring-2 ring-wetland-green/20"
+                  />
+                  <h3 className="text-3xl font-display font-black text-slate-900 tracking-tight">Dr. James Okuk</h3>
+                  <p className="text-wetland-green text-[10px] font-black uppercase tracking-[0.2em] mt-3 mb-4">Lead Consultant · Water & Wetlands Geopolitics</p>
+                  <p className="text-slate-500 text-sm font-medium leading-relaxed">
+                    White Nile and Sudd Centre · Juba, South Sudan
+                  </p>
+                </div>
+                <div className="lg:col-span-8 space-y-6 text-slate-600 text-lg leading-relaxed font-light">
+                  <p>
+                    James Okuk holds a PhD in Political Philosophy from the University of Nairobi (2009), master&apos;s and bachelor&apos;s degrees in philosophy and social sciences from the Catholic University of Eastern Africa (CUEA) in Nairobi and St. Paul&apos;s Major Seminary in Khartoum (1998, 2002 &amp; 2004). He also obtained advanced professional certificates in leadership, management, analysis, human rights, diplomacy, peace, planning, research, editing, and evaluation from renowned institutions in the region and abroad (Rio Branco in Brazil, UNITAR in New York, CASS in China, IFSI in India, and others).
+                  </p>
+                  <p>
+                    Okuk served as a diplomat in the Headquarters of the Ministry of Foreign Affairs (MFA) of the Republic of Sudan at the level of Second Secretary and First Secretary between 2006 and 2007, and as a Counsellor in the Embassy of Sudan in Brazil between 2007 and 2011. When South Sudan became independent from Sudan on 9 July 2011, he was recalled to serve concurrently as senior diplomat, researcher, planner, and trainer in the headquarters of the Ministry of Foreign Affairs and International Cooperation of South Sudan (MFA&amp;IC) in Juba, and as professor of political science at the University of Juba for both undergraduate and postgraduate students. He was one of the experts consulted by IGAD in August 2017 to brainstorm on the way forward for the High-Level Revitalization Forum (HLRF), which led to the signing of the 2018 Revitalized Agreement on the Resolution of the Conflict in the Republic of South Sudan (R-ARCSS) and establishment of the Revitalized Government of National Unity (R-TGoNU).
+                  </p>
+                  <p>
+                    He also served as Senior Research Fellow at the South Sudan Center for Strategic and Policy Studies (CSPS) in Juba from 2018 to 2022, and as coordinator of the High-Level Breakfast Discussion and Strategic Thinking on the Peace Process in South Sudan, funded by Norway and bringing many renowned personalities to Juba. He has served as Governance Specialist with UNDP South Sudan. He is currently the lead consultant on water and wetlands geopolitics at the White Nile and Sudd Centre (WNSC).
+                  </p>
+                  <p>
+                    James Okuk is a renowned political analyst, commentator, and columnist who presents informed opinions on the political situation of South Sudan in the wake of globalization, geopolitics, human rights, good governance, rule of law, and diplomacy. He authored his first book, <em>Peace of South Sudan and Revitalization: Historicity, Institutions, Leadership and External Dynamics</em>, published by CUEA Press in 2019.
+                  </p>
+                  <p>
+                    In addition to many newspaper and website articles, he has written peer-reviewed articles and book reviews including &ldquo;Revitalizing the Government for Peacebuilding in South Sudan&rdquo;, published in <em>African Conflict &amp; Peacebuilding Review</em>, Volume 11, Number 2, Fall 2021, pp. 64–84 (Indiana University Press); &ldquo;Fair Justice for Global Economic Business in Africa&rdquo;, a book chapter published by AIDAL in 2007; a book review in March 2023 in <em>International Affairs</em> (Oxford University) for <em>Leadership, Nation-Building and War in South Sudan: The Problems of Statehood and Collective Will</em> by Sonja Theron (Bloomsbury, 2022); and a book review in December 2022 in the <em>African Journal on Conflict Resolution</em> (ACCORD) for <em>The Politics of Fear in South Sudan: Generating Chaos, Creating Conflict</em> by Daniel Akech Thiong (Bloomsbury, 2021).
+                  </p>
+                </div>
+              </div>
+            </article>
+          </FadeInSection>
+
+          <FadeInSection delay={0.5}>
+            <article className="bg-white rounded-[4rem] p-12 md:p-20 border border-slate-100 shadow-sm mb-20 relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-72 h-72 bg-nile-blue/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 relative z-10">
+                <div className="lg:col-span-4 flex flex-col items-center lg:items-start text-center lg:text-left">
+                  <div className="w-32 h-32 bg-nile-blue/10 rounded-[2.5rem] flex items-center justify-center text-nile-blue mb-6 shadow-inner">
+                    <Users size={56} />
+                  </div>
+                  <h3 className="text-3xl font-display font-black text-slate-900 tracking-tight">Nhial Titmamer</h3>
+                  <p className="text-nile-blue text-[10px] font-black uppercase tracking-[0.2em] mt-3 mb-4">Founding Member · Board of Trustees</p>
+                  <p className="text-slate-500 text-sm font-medium leading-relaxed">
+                    Environmental Affairs Officer, UNMISS · South Sudan
+                  </p>
+                </div>
+                <div className="lg:col-span-8 space-y-6 text-slate-600 text-lg leading-relaxed font-light">
+                  <p>
+                    Nhial Titmamer is an environmental specialist and interdisciplinary researcher whose work has significantly enhanced public policy and civil society understanding and engagement in the areas of natural resource governance, environmental protection and compliance, climate change adaptation and mitigation, ecotourism, and sustainable energy in South Sudan and beyond.
+                  </p>
+                  <p>
+                    Nhial is currently working with the United Nations Mission in South Sudan (UNMISS) as an Environmental Affairs Officer charged with the responsibility to ensure environmental compliance with UN policies and national laws in over 20 mission locations across South Sudan. Before that, Nhial served with the United Nations High Commissioner for Refugees (UNHCR) as a Senior Environment Associate. He is on leave from the Sudd Institute, a South Sudanese think tank where he has served as Director of the Environment and Natural Resources Program. Nhial is a founding member and serves on the Board of Trustees of the White Nile and Sudd Centre. Nhial has also served as an Adjunct Assistant Professor at the School of Natural Resources and Environmental Studies at the University of Juba since 2015, where he has taught Environmental Economics, Natural Resource Economics, and Environmental Sociology. He has served on various committees including the Juba–Rumbek Road Project Review Committee, the Parliamentary Ad Hoc Committee on oil and gas revenues, and the Environmental Audit Committee on petroleum industry environmental compliance, among others, where he has made significant contributions.
+                  </p>
+                  <p>
+                    Nhial spent research and consulting stints at Arletta Environmental Consulting in Calgary and at the University of Alberta&apos;s Augustana Campus in Camrose as a research assistant in environmental studies, with projects focusing on wildlife festivals, whale ecotourism, and impacts of water use for oil sands development on semi-aquatic mammals in the Lower Athabasca River in Canada. Nhial is a recipient of the research impact award, awarded by the Board of Directors of the Sudd Institute for research that has influenced policies.
+                  </p>
+                  <p>
+                    Nhial holds a B.A. in Environmental Studies with a minor in English Literature from the University of Alberta in Canada, where he was editor of the students&apos; newspaper, <em>The Dagligtale</em>, and an M.Sc. in Sustainable Energy Development from the University of Calgary in Alberta, Canada, where he was a Government of Alberta Graduate Student Scholarship recipient in recognition of outstanding academic achievement in master&apos;s degree studies.
+                  </p>
+                </div>
+              </div>
+            </article>
+          </FadeInSection>
+
+          <FadeInSection delay={0.1}>
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <span className="text-[10px] font-black uppercase tracking-[0.3em] text-nile-blue">Governance</span>
+              <h3 className="text-4xl font-display font-black text-water-dark mt-4 tracking-tighter">Board of Trustees</h3>
+              <p className="text-slate-500 text-lg font-light mt-6 leading-relaxed">
+                Members of the Board of Trustees of the White Nile and Sudd Centre.
+              </p>
               <div className="w-20 h-1 bg-nile-blue mx-auto mt-8 rounded-full" />
             </div>
           </FadeInSection>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {[
-              { name: "Dr. Lual Deng", role: "Executive Director", focus: "Environmental Policy" },
-              { name: "Prof. Sarah Nyandeng", role: "Chief Hydrologist", focus: "Wetland Dynamics" },
-              { name: "Hon. Kuol Manyang", role: "Strategic Advisor", focus: "Transboundary Waters" }
+              { name: "Joshua Dau Diu", role: "Chairman", image: null as string | null },
+              { name: "Eng. Isaac Liabwel C. Yol", role: "Deputy Chairman", image: "/isaac-liabwel-yol.png" },
+              { name: "Julia A. Duany", role: "Member", image: null },
+              { name: "Nhial Titmamer", role: "Member", image: null },
+              { name: "Dr. John Leju Celestino Ladu", role: "Member", image: null }
             ].map((member, i) => (
-              <FadeInSection key={i} delay={i * 0.1}>
-                <div className="group bg-white p-12 rounded-[4rem] border border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-700 text-center relative overflow-hidden">
+              <FadeInSection key={member.name} delay={i * 0.08}>
+                <div className={`group bg-white p-12 rounded-[4rem] border shadow-sm hover:shadow-2xl transition-all duration-700 text-center relative overflow-hidden ${member.role === "Chairman" ? "border-nile-blue/30 ring-1 ring-nile-blue/10" : "border-slate-100"}`}>
                   <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-nile-blue/20 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700" />
-                  <div className="w-28 h-28 bg-slate-50 rounded-[2.5rem] mx-auto mb-8 flex items-center justify-center text-slate-200 group-hover:bg-nile-blue/10 group-hover:text-nile-blue group-hover:rotate-6 transition-all duration-500 shadow-inner">
-                    <Users size={48} />
-                  </div>
-                  <h3 className="text-2xl font-display font-black text-slate-900 mb-2">{member.name}</h3>
-                  <p className="text-nile-blue text-[10px] font-black uppercase tracking-[0.2em] mb-6">{member.role}</p>
-                  <div className="pt-6 border-t border-slate-50">
-                    <span className="text-[9px] font-black uppercase tracking-[0.25em] text-slate-300">Expertise: {member.focus}</span>
-                  </div>
+                  {member.image ? (
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      className="w-28 h-28 rounded-[2.5rem] object-cover object-top mx-auto mb-8 shadow-lg border-4 border-white ring-2 ring-nile-blue/20"
+                    />
+                  ) : (
+                    <div className="w-28 h-28 bg-slate-50 rounded-[2.5rem] mx-auto mb-8 flex items-center justify-center text-slate-200 group-hover:bg-nile-blue/10 group-hover:text-nile-blue group-hover:rotate-6 transition-all duration-500 shadow-inner">
+                      <Users size={48} />
+                    </div>
+                  )}
+                  <h3 className="text-xl font-display font-black text-slate-900 mb-2 leading-snug">{member.name}</h3>
+                  <p className="text-nile-blue text-[10px] font-black uppercase tracking-[0.2em]">
+                    {member.role === "Member" ? "Member of Board of Trustees" : `${member.role} · Board of Trustees`}
+                  </p>
                 </div>
               </FadeInSection>
             ))}
@@ -1402,6 +1604,34 @@ const ContactPage = () => {
                       <h4 className="font-black text-[10px] uppercase tracking-widest text-water-light/30 mb-2">Field Liaison</h4>
                       <p className="text-xl font-bold">+211 914 789 322</p>
                       <p className="text-sm text-water-light/50 mt-1 italic font-light">Direct Research Line</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-8 group">
+                    <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0 group-hover:bg-nile-blue group-hover:border-nile-blue transition-all duration-500">
+                      <Network size={28} className="text-water-blue group-hover:text-white transition-colors" />
+                    </div>
+                    <div>
+                      <h4 className="font-black text-[10px] uppercase tracking-widest text-water-light/30 mb-3">Connect</h4>
+                      <div className="flex flex-wrap gap-3">
+                        <a
+                          href={SOCIAL_LINKS.facebook}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 text-sm font-semibold text-water-light transition-colors hover:border-nile-blue hover:bg-nile-blue/20 hover:text-white"
+                        >
+                          <Facebook size={16} />
+                          Facebook
+                        </a>
+                        <a
+                          href={SOCIAL_LINKS.linkedin}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 text-sm font-semibold text-water-light transition-colors hover:border-nile-blue hover:bg-nile-blue/20 hover:text-white"
+                        >
+                          <Linkedin size={16} />
+                          LinkedIn
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>

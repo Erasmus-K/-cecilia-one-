@@ -1005,9 +1005,11 @@ const AboutPage = () => {
               <div className="absolute top-0 right-0 w-72 h-72 bg-nile-blue/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 relative z-10">
                 <div className="lg:col-span-4 flex flex-col items-center lg:items-start text-center lg:text-left">
-                  <div className="w-32 h-32 bg-nile-blue/10 rounded-[2.5rem] flex items-center justify-center text-nile-blue mb-6 shadow-inner">
-                    <Users size={56} />
-                  </div>
+                  <img
+                    src="/yong-kuai-kuorwel.png"
+                    alt="Mr. Yong Kuai Kuorwel, Founding Member"
+                    className="w-40 h-40 rounded-[2.5rem] object-cover object-top mb-6 shadow-lg border-4 border-white ring-2 ring-nile-blue/20"
+                  />
                   <h3 className="text-3xl font-display font-black text-slate-900 tracking-tight">Mr. Yong Kuai Kuorwel</h3>
                   <p className="text-nile-blue text-[10px] font-black uppercase tracking-[0.2em] mt-3 mb-4">Founding Member</p>
                   <p className="text-slate-500 text-sm font-medium leading-relaxed">
@@ -1174,7 +1176,7 @@ const AboutPage = () => {
               { name: "Eng. Isaac Liabwel C. Yol", role: "Deputy Chairman", image: "/isaac-liabwel-yol.png" },
               { name: "Julia A. Duany", role: "Member", image: null },
               { name: "Nhial Titmamer", role: "Member", image: null },
-              { name: "Dr. John Leju Celestino Ladu", role: "Member", image: null }
+              { name: "Dr. John Leju Celestino Ladu", role: "Member", image: "/john-leju-ladu.png" }
             ].map((member, i) => (
               <FadeInSection key={member.name} delay={i * 0.08}>
                 <div className={`group bg-white p-12 rounded-[4rem] border shadow-sm hover:shadow-2xl transition-all duration-700 text-center relative overflow-hidden ${member.role === "Chairman" ? "border-nile-blue/30 ring-1 ring-nile-blue/10" : "border-slate-100"}`}>

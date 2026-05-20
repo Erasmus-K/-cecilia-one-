@@ -997,7 +997,7 @@ const AboutPage = () => {
               <span className="text-[10px] font-black uppercase tracking-[0.3em] text-nile-blue">The Collective</span>
               <h2 className="text-5xl font-display font-black text-water-dark mt-4 tracking-tighter">Leadership</h2>
               <p className="text-slate-500 text-lg font-light mt-6 leading-relaxed">
-                Tong Deng Anei serves as Executive Director. Members of the Board of Trustees provide governance and strategic oversight.
+                Tong Deng Anei serves as Executive Director. Isaac Liabwel C. Yol serves as Deputy Chairman of the Board of Trustees. Members of the Board of Trustees provide governance and strategic oversight.
               </p>
               <div className="w-20 h-1 bg-nile-blue mx-auto mt-8 rounded-full" />
             </div>
@@ -1031,63 +1031,17 @@ const AboutPage = () => {
             </article>
           </FadeInSection>
 
-          <FadeInSection delay={0.15}>
-            <div className="text-center max-w-3xl mx-auto mb-16">
-              <span className="text-[10px] font-black uppercase tracking-[0.3em] text-nile-blue">Governance</span>
-              <h3 className="text-4xl font-display font-black text-water-dark mt-4 tracking-tighter">Board of Trustees</h3>
-              <p className="text-slate-500 text-lg font-light mt-6 leading-relaxed">
-                Members of the Board of Trustees of the White Nile and Sudd Centre.
-              </p>
-              <div className="w-20 h-1 bg-nile-blue mx-auto mt-8 rounded-full" />
-            </div>
-          </FadeInSection>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-            {[
-              { name: "Joshua Dau Diu", role: "Chairman", image: null as string | null },
-              { name: "Isaac Liabwel C. Yol", role: "Deputy Chairman", image: "/isaac-liabwel-yol.png" },
-              { name: "Julia A. Duany", role: "Member", image: "/julia-a-duany.png" },
-              { name: "Nhial Titmamer", role: "Member", image: "/nhial-titmamer.png" },
-              { name: "Dr. John Leju Celestino Ladu", role: "Member", image: "/john-leju-ladu.png" }
-            ].map((member, i) => (
-              <FadeInSection key={member.name} delay={i * 0.08}>
-                <div className={`group bg-white p-12 rounded-[4rem] border shadow-sm hover:shadow-2xl transition-all duration-700 text-center relative overflow-hidden ${member.role === "Chairman" ? "border-nile-blue/30 ring-1 ring-nile-blue/10" : "border-slate-100"}`}>
-                  <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-nile-blue/20 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700" />
-                  {member.image ? (
-                    <img
-                      src={member.image}
-                      alt={member.name}
-                      className="w-28 h-28 rounded-[2.5rem] object-cover object-top mx-auto mb-8 shadow-lg border-4 border-white ring-2 ring-nile-blue/20"
-                    />
-                  ) : (
-                    <div className="w-28 h-28 bg-slate-50 rounded-[2.5rem] mx-auto mb-8 flex items-center justify-center text-slate-200 group-hover:bg-nile-blue/10 group-hover:text-nile-blue group-hover:rotate-6 transition-all duration-500 shadow-inner">
-                      <Users size={48} />
-                    </div>
-                  )}
-                  <h3 className="text-xl font-display font-black text-slate-900 mb-2 leading-snug">{member.name}</h3>
-                  <p className="text-nile-blue text-[10px] font-black uppercase tracking-[0.2em]">
-                    {member.role === "Member"
-                      ? "Member of Board of Trustees"
-                      : member.role === "Deputy Chairman"
-                        ? "Deputy Chairman of Board of Trustees"
-                        : `${member.role} · Board of Trustees`}
-                  </p>
-                </div>
-              </FadeInSection>
-            ))}
-          </div>
-
-          <FadeInSection delay={0.3}>
+          <FadeInSection delay={0.2}>
             <article className="bg-white rounded-[4rem] p-12 md:p-20 border border-slate-100 shadow-sm mb-20 relative overflow-hidden">
               <div className="absolute top-0 right-0 w-72 h-72 bg-nile-blue/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 relative z-10">
                 <div className="lg:col-span-4 flex flex-col items-center lg:items-start text-center lg:text-left">
                   <img
                     src="/isaac-liabwel-yol.png"
-                    alt="Eng. Isaac Liabwel C. Yol, Deputy Chairman of the Board of Trustees"
+                    alt="Isaac Liabwel C. Yol, Deputy Chairman of the Board of Trustees"
                     className="w-40 h-40 rounded-[2.5rem] object-cover object-top mb-6 shadow-lg border-4 border-white ring-2 ring-nile-blue/20"
                   />
-                  <h3 className="text-3xl font-display font-black text-slate-900 tracking-tight">Eng. Isaac Liabwel C. Yol</h3>
+                  <h3 className="text-3xl font-display font-black text-slate-900 tracking-tight">Isaac Liabwel C. Yol</h3>
                   <p className="text-nile-blue text-[10px] font-black uppercase tracking-[0.2em] mt-3 mb-4">Deputy Chairman of Board of Trustees</p>
                   <p className="text-slate-500 text-sm font-medium leading-relaxed">
                     Former Undersecretary, Ministry of Water Resources and Irrigation · South Sudan
@@ -1172,6 +1126,44 @@ const AboutPage = () => {
               </div>
             </article>
           </FadeInSection>
+
+          <FadeInSection delay={0.55}>
+            <div className="text-center max-w-3xl mx-auto mb-16 mt-10">
+              <h3 className="text-4xl font-display font-black text-water-dark tracking-tighter">Members of Board of Trustees</h3>
+              <div className="w-20 h-1 bg-nile-blue mx-auto mt-8 rounded-full" />
+            </div>
+          </FadeInSection>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            {[
+              { name: "Joshua Dau Diu", role: "Chairman", image: null as string | null },
+              { name: "Julia A. Duany", role: "Member", image: "/julia-a-duany.png" },
+              { name: "Dr. John Leju Celestino Ladu", role: "Member", image: "/john-leju-ladu.png" }
+            ].map((member, i) => (
+              <FadeInSection key={member.name} delay={i * 0.08}>
+                <div className={`group bg-white p-12 rounded-[4rem] border shadow-sm hover:shadow-2xl transition-all duration-700 text-center relative overflow-hidden ${member.role === "Chairman" ? "border-nile-blue/30 ring-1 ring-nile-blue/10" : "border-slate-100"}`}>
+                  <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-nile-blue/20 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700" />
+                  {member.image ? (
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      className="w-28 h-28 rounded-[2.5rem] object-cover object-top mx-auto mb-8 shadow-lg border-4 border-white ring-2 ring-nile-blue/20"
+                    />
+                  ) : (
+                    <div className="w-28 h-28 bg-slate-50 rounded-[2.5rem] mx-auto mb-8 flex items-center justify-center text-slate-200 group-hover:bg-nile-blue/10 group-hover:text-nile-blue group-hover:rotate-6 transition-all duration-500 shadow-inner">
+                      <Users size={48} />
+                    </div>
+                  )}
+                  <h3 className="text-xl font-display font-black text-slate-900 mb-2 leading-snug">{member.name}</h3>
+                  <p className="text-nile-blue text-[10px] font-black uppercase tracking-[0.2em]">
+                    {member.role === "Member"
+                      ? "Member of Board of Trustees"
+                      : `${member.role} · Board of Trustees`}
+                  </p>
+                </div>
+              </FadeInSection>
+            ))}
+          </div>
 
         </div>
       </section>

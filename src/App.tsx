@@ -1046,7 +1046,7 @@ const AboutPage = () => {
             {[
               { name: "Joshua Dau Diu", role: "Chairman", image: null as string | null },
               { name: "Isaac Liabwel C. Yol", role: "Deputy Chairman", image: "/isaac-liabwel-yol.png" },
-              { name: "Julia A. Duany", role: "Member", image: null },
+              { name: "Julia A. Duany", role: "Member", image: "/julia-a-duany.png" },
               { name: "Nhial Titmamer", role: "Member", image: "/nhial-titmamer.png" },
               { name: "Dr. John Leju Celestino Ladu", role: "Member", image: "/john-leju-ladu.png" }
             ].map((member, i) => (
@@ -1167,43 +1167,6 @@ const AboutPage = () => {
                   </p>
                   <p>
                     He holds a master&apos;s degree in urban and Regional Planning and a bachelor&apos;s degree in environmental management from RMIT University in Melbourne, Australia. His academic background, combined with his practical experience, positions him as a skilled practitioner in integrating environmental sustainability, urban development, and occupational safety within both development and peacekeeping contexts.
-                  </p>
-                </div>
-              </div>
-            </article>
-          </FadeInSection>
-
-          <FadeInSection delay={0.55}>
-            <article className="bg-white rounded-[4rem] p-12 md:p-20 border border-slate-100 shadow-sm mb-20 relative overflow-hidden">
-              <div className="absolute top-0 left-0 w-72 h-72 bg-wetland-green/5 rounded-full blur-3xl -translate-y-1/2 -translate-x-1/2" />
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 relative z-10">
-                <div className="lg:col-span-4 flex flex-col items-center lg:items-start text-center lg:text-left">
-                  <img
-                    src="/james-okuk.png"
-                    alt="Dr. James Okuk, Lead Consultant on Water and Wetlands Geopolitics"
-                    className="w-40 h-40 rounded-[2.5rem] object-cover object-top mb-6 shadow-lg border-4 border-white ring-2 ring-wetland-green/20"
-                  />
-                  <h3 className="text-3xl font-display font-black text-slate-900 tracking-tight">Dr. James Okuk</h3>
-                  <p className="text-wetland-green text-[10px] font-black uppercase tracking-[0.2em] mt-3 mb-4">Lead Consultant · Water & Wetlands Geopolitics</p>
-                  <p className="text-slate-500 text-sm font-medium leading-relaxed">
-                    White Nile and Sudd Centre · Juba, South Sudan
-                  </p>
-                </div>
-                <div className="lg:col-span-8 space-y-6 text-slate-600 text-lg leading-relaxed font-light">
-                  <p>
-                    James Okuk holds a PhD in Political Philosophy from the University of Nairobi (2009), master&apos;s and bachelor&apos;s degrees in philosophy and social sciences from the Catholic University of Eastern Africa (CUEA) in Nairobi and St. Paul&apos;s Major Seminary in Khartoum (1998, 2002 &amp; 2004). He also obtained advanced professional certificates in leadership, management, analysis, human rights, diplomacy, peace, planning, research, editing, and evaluation from renowned institutions in the region and abroad (Rio Branco in Brazil, UNITAR in New York, CASS in China, IFSI in India, and others).
-                  </p>
-                  <p>
-                    Okuk served as a diplomat in the Headquarters of the Ministry of Foreign Affairs (MFA) of the Republic of Sudan at the level of Second Secretary and First Secretary between 2006 and 2007, and as a Counsellor in the Embassy of Sudan in Brazil between 2007 and 2011. When South Sudan became independent from Sudan on 9 July 2011, he was recalled to serve concurrently as senior diplomat, researcher, planner, and trainer in the headquarters of the Ministry of Foreign Affairs and International Cooperation of South Sudan (MFA&amp;IC) in Juba, and as professor of political science at the University of Juba for both undergraduate and postgraduate students. He was one of the experts consulted by IGAD in August 2017 to brainstorm on the way forward for the High-Level Revitalization Forum (HLRF), which led to the signing of the 2018 Revitalized Agreement on the Resolution of the Conflict in the Republic of South Sudan (R-ARCSS) and establishment of the Revitalized Government of National Unity (R-TGoNU).
-                  </p>
-                  <p>
-                    He also served as Senior Research Fellow at the South Sudan Center for Strategic and Policy Studies (CSPS) in Juba from 2018 to 2022, and as coordinator of the High-Level Breakfast Discussion and Strategic Thinking on the Peace Process in South Sudan, funded by Norway and bringing many renowned personalities to Juba. He has served as Governance Specialist with UNDP South Sudan. He is currently the lead consultant on water and wetlands geopolitics at the White Nile and Sudd Centre (WNSC).
-                  </p>
-                  <p>
-                    James Okuk is a renowned political analyst, commentator, and columnist who presents informed opinions on the political situation of South Sudan in the wake of globalization, geopolitics, human rights, good governance, rule of law, and diplomacy. He authored his first book, <em>Peace of South Sudan and Revitalization: Historicity, Institutions, Leadership and External Dynamics</em>, published by CUEA Press in 2019.
-                  </p>
-                  <p>
-                    In addition to many newspaper and website articles, he has written peer-reviewed articles and book reviews including &ldquo;Revitalizing the Government for Peacebuilding in South Sudan&rdquo;, published in <em>African Conflict &amp; Peacebuilding Review</em>, Volume 11, Number 2, Fall 2021, pp. 64–84 (Indiana University Press); &ldquo;Fair Justice for Global Economic Business in Africa&rdquo;, a book chapter published by AIDAL in 2007; a book review in March 2023 in <em>International Affairs</em> (Oxford University) for <em>Leadership, Nation-Building and War in South Sudan: The Problems of Statehood and Collective Will</em> by Sonja Theron (Bloomsbury, 2022); and a book review in December 2022 in the <em>African Journal on Conflict Resolution</em> (ACCORD) for <em>The Politics of Fear in South Sudan: Generating Chaos, Creating Conflict</em> by Daniel Akech Thiong (Bloomsbury, 2021).
                   </p>
                 </div>
               </div>

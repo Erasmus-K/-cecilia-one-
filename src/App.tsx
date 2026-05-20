@@ -997,14 +997,14 @@ const AboutPage = () => {
               <span className="text-[10px] font-black uppercase tracking-[0.3em] text-nile-blue">The Collective</span>
               <h2 className="text-5xl font-display font-black text-water-dark mt-4 tracking-tighter">Leadership</h2>
               <p className="text-slate-500 text-lg font-light mt-6 leading-relaxed">
-                Tong Deng Anei serves as Executive Director. Isaac Liabwel C. Yol serves as Deputy Chairman of the Board of Trustees. Members of the Board of Trustees provide governance and strategic oversight.
+                Tong Deng Anei serves as Executive Director. Joshua Dau Diu serves as Chairman of the Board of Trustees. Isaac Liabwel C. Yol serves as Deputy Chairman of the Board of Trustees. Members of the Board of Trustees provide governance and strategic oversight.
               </p>
               <div className="w-20 h-1 bg-nile-blue mx-auto mt-8 rounded-full" />
             </div>
           </FadeInSection>
 
           <FadeInSection delay={0.1}>
-            <article className="bg-white rounded-[4rem] p-12 md:p-20 border border-slate-100 shadow-sm mb-20 relative overflow-hidden">
+            <article className="bg-white rounded-[4rem] p-12 md:p-20 border border-slate-100 shadow-sm mb-0 relative overflow-hidden">
               <div className="absolute top-0 left-0 w-72 h-72 bg-wetland-green/5 rounded-full blur-3xl -translate-y-1/2 -translate-x-1/2" />
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 relative z-10">
                 <div className="lg:col-span-4 flex flex-col items-center lg:items-start text-center lg:text-left">
@@ -1030,6 +1030,11 @@ const AboutPage = () => {
               </div>
             </article>
           </FadeInSection>
+
+          <div className="py-14 text-center">
+            <h3 className="text-4xl md:text-5xl font-display font-black text-water-dark tracking-tighter">Members of Board of Trustees</h3>
+            <div className="w-20 h-1 bg-nile-blue mx-auto mt-6 rounded-full" />
+          </div>
 
           <FadeInSection delay={0.2}>
             <article className="bg-white rounded-[4rem] p-12 md:p-20 border border-slate-100 shadow-sm mb-20 relative overflow-hidden">
@@ -1127,14 +1132,7 @@ const AboutPage = () => {
             </article>
           </FadeInSection>
 
-          <FadeInSection delay={0.55}>
-            <div className="text-center max-w-3xl mx-auto mb-16 mt-10">
-              <h3 className="text-4xl font-display font-black text-water-dark tracking-tighter">Members of Board of Trustees</h3>
-              <div className="w-20 h-1 bg-nile-blue mx-auto mt-8 rounded-full" />
-            </div>
-          </FadeInSection>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-10">
             {[
               { name: "Joshua Dau Diu", role: "Chairman", image: null as string | null },
               { name: "Julia A. Duany", role: "Member", image: "/julia-a-duany.png" },

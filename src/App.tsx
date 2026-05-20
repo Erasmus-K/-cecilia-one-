@@ -1036,6 +1036,19 @@ const AboutPage = () => {
             <div className="w-20 h-1 bg-nile-blue mx-auto mt-6 rounded-full" />
           </div>
 
+          <FadeInSection delay={0.18}>
+            <div className="max-w-sm mx-auto mb-20">
+              <div className="group bg-white p-12 rounded-[4rem] border border-nile-blue/30 ring-1 ring-nile-blue/10 shadow-sm hover:shadow-2xl transition-all duration-700 text-center relative overflow-hidden">
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-nile-blue/20 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700" />
+                <div className="w-28 h-28 bg-slate-50 rounded-[2.5rem] mx-auto mb-8 flex items-center justify-center text-slate-200 group-hover:bg-nile-blue/10 group-hover:text-nile-blue group-hover:rotate-6 transition-all duration-500 shadow-inner">
+                  <Users size={48} />
+                </div>
+                <h3 className="text-xl font-display font-black text-slate-900 mb-2 leading-snug">Joshua Dau Diu</h3>
+                <p className="text-nile-blue text-[10px] font-black uppercase tracking-[0.2em]">Chairman · Board of Trustees</p>
+              </div>
+            </div>
+          </FadeInSection>
+
           <FadeInSection delay={0.2}>
             <article className="bg-white rounded-[4rem] p-12 md:p-20 border border-slate-100 shadow-sm mb-20 relative overflow-hidden">
               <div className="absolute top-0 right-0 w-72 h-72 bg-nile-blue/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
@@ -1134,12 +1147,11 @@ const AboutPage = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-10">
             {[
-              { name: "Joshua Dau Diu", role: "Chairman", image: null as string | null },
               { name: "Julia A. Duany", role: "Member", image: "/julia-a-duany.png" },
               { name: "Dr. John Leju Celestino Ladu", role: "Member", image: "/john-leju-ladu.png" }
             ].map((member, i) => (
               <FadeInSection key={member.name} delay={i * 0.08}>
-                <div className={`group bg-white p-12 rounded-[4rem] border shadow-sm hover:shadow-2xl transition-all duration-700 text-center relative overflow-hidden ${member.role === "Chairman" ? "border-nile-blue/30 ring-1 ring-nile-blue/10" : "border-slate-100"}`}>
+                <div className="group bg-white p-12 rounded-[4rem] border border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-700 text-center relative overflow-hidden">
                   <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-nile-blue/20 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700" />
                   {member.image ? (
                     <img
@@ -1153,11 +1165,7 @@ const AboutPage = () => {
                     </div>
                   )}
                   <h3 className="text-xl font-display font-black text-slate-900 mb-2 leading-snug">{member.name}</h3>
-                  <p className="text-nile-blue text-[10px] font-black uppercase tracking-[0.2em]">
-                    {member.role === "Member"
-                      ? "Member of Board of Trustees"
-                      : `${member.role} · Board of Trustees`}
-                  </p>
+                  <p className="text-nile-blue text-[10px] font-black uppercase tracking-[0.2em]">Member of Board of Trustees</p>
                 </div>
               </FadeInSection>
             ))}

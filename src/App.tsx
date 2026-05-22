@@ -1114,41 +1114,11 @@ const AboutPage = () => {
             </article>
           </FadeInSection>
 
-          <FadeInSection delay={0.5}>
-            <article className="bg-white rounded-[4rem] p-12 md:p-20 border border-slate-100 shadow-sm mb-20 relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-72 h-72 bg-nile-blue/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 relative z-10">
-                <div className="lg:col-span-4 flex flex-col items-center lg:items-start text-center lg:text-left">
-                  <img
-                    src="/yong-kuai-kuorwel.png"
-                    alt="Mr. Yong Kuai Kuorwel, Founding Member"
-                    className="w-40 h-40 rounded-[2.5rem] object-cover object-top mb-6 shadow-lg border-4 border-white ring-2 ring-nile-blue/20"
-                  />
-                  <h3 className="text-3xl font-display font-black text-slate-900 tracking-tight">Mr. Yong Kuai Kuorwel</h3>
-                  <p className="text-nile-blue text-[10px] font-black uppercase tracking-[0.2em] mt-3 mb-4">Founding Member</p>
-                  <p className="text-slate-500 text-sm font-medium leading-relaxed">
-                    Occupational Safety Officer, MINUSCA · Bangui
-                  </p>
-                </div>
-                <div className="lg:col-span-8 space-y-6 text-slate-600 text-lg leading-relaxed font-light">
-                  <p>
-                    Mr. Yong Kuai Kuorwel is a founding member of the White Nile and Sudd Centre. He currently serves with the United Nations Multidimensional Integrated Stabilization Mission in the Central African Republic (MINUSCA) as an Occupational Safety Officer, based in Bangui. He is a highly experienced professional environmentalist, urban planner, and certified occupational safety practitioner with a strong record of service across national and international organizations.
-                  </p>
-                  <p>
-                    Mr. Kuorwel brings extensive multidisciplinary expertise in occupational safety and health, energy and water management, waste management, land use planning, and natural resources management. His work focuses on promoting safe, sustainable, and environmentally responsible practices within complex operational and humanitarian settings. Throughout his career, he has contributed to the development and implementation of policies, systems, and field-level interventions that enhance environmental performance and occupational safety compliance.
-                  </p>
-                  <p>
-                    He holds a master&apos;s degree in urban and Regional Planning and a bachelor&apos;s degree in environmental management from RMIT University in Melbourne, Australia. His academic background, combined with his practical experience, positions him as a skilled practitioner in integrating environmental sustainability, urban development, and occupational safety within both development and peacekeeping contexts.
-                  </p>
-                </div>
-              </div>
-            </article>
-          </FadeInSection>
-
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-10">
             {[
               { name: "Julia A. Duany", role: "Member", image: "/julia-a-duany.png" },
-              { name: "Dr. John Leju Celestino Ladu", role: "Member", image: "/john-leju-ladu.png" }
+              { name: "Dr. John Leju Celestino Ladu", role: "Member", image: "/john-leju-ladu.png" },
+              { name: "Mr. Yong Kuai Kuorwel", role: "Founding Member", image: "/yong-kuai-kuorwel.png" }
             ].map((member, i) => (
               <FadeInSection key={member.name} delay={i * 0.08}>
                 <div className="group bg-white p-12 rounded-[4rem] border border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-700 text-center relative overflow-hidden">
@@ -1165,7 +1135,9 @@ const AboutPage = () => {
                     </div>
                   )}
                   <h3 className="text-xl font-display font-black text-slate-900 mb-2 leading-snug">{member.name}</h3>
-                  <p className="text-nile-blue text-[10px] font-black uppercase tracking-[0.2em]">Member of Board of Trustees</p>
+                  <p className="text-nile-blue text-[10px] font-black uppercase tracking-[0.2em]">
+                    {member.role === "Founding Member" ? "Founding Member" : "Member of Board of Trustees"}
+                  </p>
                 </div>
               </FadeInSection>
             ))}

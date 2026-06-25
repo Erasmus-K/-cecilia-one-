@@ -1037,16 +1037,35 @@ const AboutPage = () => {
           </div>
 
           <FadeInSection delay={0.18}>
-            <div className="max-w-sm mx-auto mb-20">
-              <div className="group bg-white p-12 rounded-[4rem] border border-nile-blue/30 ring-1 ring-nile-blue/10 shadow-sm hover:shadow-2xl transition-all duration-700 text-center relative overflow-hidden">
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-nile-blue/20 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700" />
-                <div className="w-28 h-28 bg-slate-50 rounded-[2.5rem] mx-auto mb-8 flex items-center justify-center text-slate-200 group-hover:bg-nile-blue/10 group-hover:text-nile-blue group-hover:rotate-6 transition-all duration-500 shadow-inner">
-                  <Users size={48} />
+            <article className="bg-white rounded-[4rem] p-12 md:p-20 border border-nile-blue/30 ring-1 ring-nile-blue/10 shadow-sm mb-20 relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-72 h-72 bg-nile-blue/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 relative z-10">
+                <div className="lg:col-span-4 flex flex-col items-center lg:items-start text-center lg:text-left">
+                  <div className="w-40 h-40 bg-slate-50 rounded-[2.5rem] flex items-center justify-center text-slate-200 mb-6 shadow-inner ring-2 ring-nile-blue/20">
+                    <Users size={56} />
+                  </div>
+                  <h3 className="text-3xl font-display font-black text-slate-900 tracking-tight">The Honorable Joshua Dau Diu</h3>
+                  <p className="text-nile-blue text-[10px] font-black uppercase tracking-[0.2em] mt-3 mb-4">Chairman · Board of Trustees</p>
+                  <p className="text-slate-500 text-sm font-medium leading-relaxed">
+                    Theologian, Pastor &amp; Member of the Council of States · Juba, South Sudan
+                  </p>
                 </div>
-                <h3 className="text-xl font-display font-black text-slate-900 mb-2 leading-snug">Joshua Dau Diu</h3>
-                <p className="text-nile-blue text-[10px] font-black uppercase tracking-[0.2em]">Chairman · Board of Trustees</p>
+                <div className="lg:col-span-8 space-y-6 text-slate-600 text-lg leading-relaxed font-light">
+                  <p>
+                    The Honorable Joshua Dau Diu is the Chairman of the Board of Trustees of the White Nile and Sudd Centre since the inception of the centre in 2022. He is a dedicated theologian, pastor, and public servant with decades of leadership in religious and national affairs. Ordained as a Pastor in the Presbyterian Church in 1970, he earned a Master&apos;s degree in Theology in 1972 in Beirut, Lebanon.
+                  </p>
+                  <p>
+                    His early career was dedicated to theological education, serving as a lecturer at Bishop Tucker Theological College in Uganda (1975–1976) and St. Paul&apos;s Theological College in Kenya (1976–1978).
+                  </p>
+                  <p>
+                    From 1978 to 2006, he served as Director for Religious Affairs for South Sudan and Sudan, fostering interfaith dialogue and strengthening church-state relations. Between 2006 and 2010, he chaired the Special Commission for the Rights of Non-Muslims in the National Capital, Khartoum, advocating for religious freedom and minority rights. He also participated in the CPA negotiations in Kenya as Secretary for Foreign Affairs of the Union of Sudan African Parties (USAP).
+                  </p>
+                  <p>
+                    Since 2011, he has been a Member of the Council of States in Juba, continuing his commitment to national unity and public service.
+                  </p>
+                </div>
               </div>
-            </div>
+            </article>
           </FadeInSection>
 
           <FadeInSection delay={0.2}>
@@ -1114,11 +1133,46 @@ const AboutPage = () => {
             </article>
           </FadeInSection>
 
+          <FadeInSection delay={0.45}>
+            <article className="bg-white rounded-[4rem] p-12 md:p-20 border border-slate-100 shadow-sm mb-20 relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-72 h-72 bg-nile-blue/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 relative z-10">
+                <div className="lg:col-span-4 flex flex-col items-center lg:items-start text-center lg:text-left">
+                  <img
+                    src="/julia-a-duany.png"
+                    alt="Professor Julia A. Duany, Member of Board of Trustees"
+                    className="w-40 h-40 rounded-[2.5rem] object-cover object-top mb-6 shadow-lg border-4 border-white ring-2 ring-nile-blue/20"
+                  />
+                  <h3 className="text-3xl font-display font-black text-slate-900 tracking-tight">Professor Julia A. Duany</h3>
+                  <p className="text-nile-blue text-[10px] font-black uppercase tracking-[0.2em] mt-3 mb-4">Member of Board of Trustees</p>
+                  <p className="text-slate-500 text-sm font-medium leading-relaxed">
+                    Undersecretary, Ministry of Public Services and Human Resource Development · South Sudan
+                  </p>
+                </div>
+                <div className="lg:col-span-8 space-y-6 text-slate-600 text-lg leading-relaxed font-light">
+                  <p>
+                    Professor Julia A. Duany is currently the Undersecretary of the Ministry of Public Services and Human Resource Development, a Professor of Educational Leadership and Policy Studies, and a former Vice Chancellor of Dr. John Garang Memorial University of Science and Technology. She is CEO and founder of the Gender Equity and Women Leadership Program, an organization that empowers women in all fields of study in South Sudan. Professor Julia Duany is a member of the Board of Trustees and a founding member of the White Nile and Sudd Centre.
+                  </p>
+                  <p>
+                    She was formerly the Undersecretary in the Ministry of Parliamentary Affairs and Chairperson of the Recruitment and Selection Board in the Ministry of Labor, Public Service and Human Resource Development in the Government of South Sudan. She was a Research Associate at the Vincent and Lin Ostrom Workshop in Political Theory and Policy Analysis at Indiana University, and a Fulbright Scholar at Makerere University, Kampala, Uganda.
+                  </p>
+                  <p>
+                    She and her family fled from Sudan when war broke out in 1984, and while living in the United States, she earned her Bachelor&apos;s, Master&apos;s, and Doctorate degrees from the Indiana University School of Education. Always concerned about social justice issues in her country, she co-founded South Sudan Friends International with her husband, an advocacy and technical assistance organization that supports grassroots communities in self-help and peace and reconciliation projects.
+                  </p>
+                  <p>
+                    She authored two books: <em>Making Peace and Nurturing Life: A Memoir of an African Woman about a Journey of Struggle and Hope</em>, and co-authored with her husband, <em>The Sudan People&apos;s Liberation Movement/Army: A Systematic Problem for People of South Sudan</em>. She has written extensively on social justice and gender issues and is passionate about women&apos;s education, bringing more South Sudanese women into political leadership roles, and peace activism.
+                  </p>
+                  <p>
+                    Winner of the Dr. Martin Luther King Jr. Building Bridges Award for Faculty for dedication to service and outstanding leadership, Indiana University (2005), and the Refugee Women Leadership Award for Valuable Contribution to Refugees, Women Commission for Refugees (1995), New York, USA. Julia taught in primary and secondary schools in Sudan and the United States, and is also an active member of the Presbyterian Church of South Sudan.
+                  </p>
+                </div>
+              </div>
+            </article>
+          </FadeInSection>
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-10">
             {[
-              { name: "Julia A. Duany", role: "Member", image: "/julia-a-duany.png" },
-              { name: "Dr. John Leju Celestino Ladu", role: "Member", image: "/john-leju-ladu.png" },
-              { name: "Mr. Yong Kuai Kuorwel", role: "Founding Member", image: "/yong-kuai-kuorwel.png" }
+              { name: "Dr. John Leju Celestino Ladu", role: "Member", image: "/john-leju-ladu.png" }
             ].map((member, i) => (
               <FadeInSection key={member.name} delay={i * 0.08}>
                 <div className="group bg-white p-12 rounded-[4rem] border border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-700 text-center relative overflow-hidden">
@@ -1135,13 +1189,42 @@ const AboutPage = () => {
                     </div>
                   )}
                   <h3 className="text-xl font-display font-black text-slate-900 mb-2 leading-snug">{member.name}</h3>
-                  <p className="text-nile-blue text-[10px] font-black uppercase tracking-[0.2em]">
-                    {member.role === "Founding Member" ? "Founding Member" : "Member of Board of Trustees"}
-                  </p>
+                  <p className="text-nile-blue text-[10px] font-black uppercase tracking-[0.2em]">Member of Board of Trustees</p>
                 </div>
               </FadeInSection>
             ))}
           </div>
+
+          <FadeInSection delay={0.5}>
+            <article className="bg-white rounded-[4rem] p-12 md:p-20 border border-slate-100 shadow-sm mb-20 mt-10 relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-72 h-72 bg-nile-blue/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 relative z-10">
+                <div className="lg:col-span-4 flex flex-col items-center lg:items-start text-center lg:text-left">
+                  <img
+                    src="/yong-kuai-kuorwel.png"
+                    alt="Mr. Yong Kuai Kuorwel, Founding Member"
+                    className="w-40 h-40 rounded-[2.5rem] object-cover object-top mb-6 shadow-lg border-4 border-white ring-2 ring-nile-blue/20"
+                  />
+                  <h3 className="text-3xl font-display font-black text-slate-900 tracking-tight">Mr. Yong Kuai Kuorwel</h3>
+                  <p className="text-nile-blue text-[10px] font-black uppercase tracking-[0.2em] mt-3 mb-4">Founding Member</p>
+                  <p className="text-slate-500 text-sm font-medium leading-relaxed">
+                    Occupational Safety Officer, MINUSCA · Bangui
+                  </p>
+                </div>
+                <div className="lg:col-span-8 space-y-6 text-slate-600 text-lg leading-relaxed font-light">
+                  <p>
+                    Mr. Yong Kuai Kuorwel is a founding member of the White Nile and Sudd Centre. He currently serves with the United Nations Multidimensional Integrated Stabilization Mission in the Central African Republic (MINUSCA) as an Occupational Safety Officer, based in Bangui. He is a highly experienced professional environmentalist, urban planner, and certified occupational safety practitioner with a strong record of service across national and international organizations.
+                  </p>
+                  <p>
+                    Mr. Kuorwel brings extensive multidisciplinary expertise in occupational safety and health, energy and water management, waste management, land use planning, and natural resources management. His work focuses on promoting safe, sustainable, and environmentally responsible practices within complex operational and humanitarian settings. Throughout his career, he has contributed to the development and implementation of policies, systems, and field-level interventions that enhance environmental performance and occupational safety compliance.
+                  </p>
+                  <p>
+                    He holds a master&apos;s degree in Urban and Regional Planning and a bachelor&apos;s degree in environmental management from RMIT University in Melbourne, Australia. His academic background, combined with his practical experience, positions him as a skilled practitioner in integrating environmental sustainability, urban development, and occupational safety within both development and peacekeeping contexts.
+                  </p>
+                </div>
+              </div>
+            </article>
+          </FadeInSection>
 
         </div>
       </section>

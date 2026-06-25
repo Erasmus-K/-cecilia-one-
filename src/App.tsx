@@ -1195,8 +1195,13 @@ const AboutPage = () => {
             ))}
           </div>
 
+          <div className="py-14 text-center">
+            <h3 className="text-4xl md:text-5xl font-display font-black text-water-dark tracking-tighter">Management Board</h3>
+            <div className="w-20 h-1 bg-nile-blue mx-auto mt-6 rounded-full" />
+          </div>
+
           <FadeInSection delay={0.5}>
-            <article className="bg-white rounded-[4rem] p-12 md:p-20 border border-slate-100 shadow-sm mb-20 mt-10 relative overflow-hidden">
+            <article className="bg-white rounded-[4rem] p-12 md:p-20 border border-slate-100 shadow-sm mb-20 relative overflow-hidden">
               <div className="absolute top-0 right-0 w-72 h-72 bg-nile-blue/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 relative z-10">
                 <div className="lg:col-span-4 flex flex-col items-center lg:items-start text-center lg:text-left">

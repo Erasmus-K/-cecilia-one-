@@ -5,10 +5,16 @@ import App from './App.tsx';
 import { LicenseSuspensionFallback } from './license/LicenseSuspensionFallback.tsx';
 import './index.css';
 
-const apiUrl = import.meta.env.VITE_LICENSE_API_URL?.trim() ?? '';
 const licenseKey = import.meta.env.VITE_LICENSE_KEY?.trim() ?? '';
 const applicationVersion =
   import.meta.env.VITE_APP_VERSION?.trim() || '1.0.0';
+
+/**
+ * Call the license API via same-origin `/api/license/check`.
+ * Vite (dev) and Vercel (prod) proxy that path to HostPilot so the browser
+ * never hits api.eranovatechnologies.com cross-origin (CORS).
+ */
+const apiUrl = '';
 
 const container = document.getElementById('root');
 if (!container) {
@@ -36,12 +42,12 @@ function MissingLicenseEnvScreen() {
           License configuration missing
         </h1>
         <p style={{ margin: '0 0 16px', color: '#cbd5e1', lineHeight: 1.6 }}>
-          Set <code>VITE_LICENSE_API_URL</code> and <code>VITE_LICENSE_KEY</code> in
-          the host environment (e.g. Vercel → Settings → Environment Variables),
-          then redeploy so Vite can bake them into the build.
+          Set <code>VITE_LICENSE_KEY</code> in the host environment (e.g. Vercel
+          → Settings → Environment Variables), then redeploy so Vite can bake it
+          into the build.
         </p>
         <p style={{ margin: 0, color: '#64748b', fontSize: 13 }}>
-          Locally, add them to <code>.env</code> and restart the dev server.
+          Locally, add it to <code>.env</code> and restart the dev server.
         </p>
       </div>
     </div>
@@ -50,7 +56,7 @@ function MissingLicenseEnvScreen() {
 
 createRoot(container).render(
   <StrictMode>
-    {!apiUrl || !licenseKey ? (
+    {!licenseKey ? (
       <MissingLicenseEnvScreen />
     ) : (
       <LicenseProvider

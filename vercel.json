@@ -4,7 +4,11 @@
   "outputDirectory": "dist",
   "rewrites": [
     {
-      "source": "/((?!assets/)(?!favicon\\.png)(?!apple-touch-icon\\.png).*)",
+      "source": "/api/license/check",
+      "destination": "https://api.eranovatechnologies.com/api/license/check"
+    },
+    {
+      "source": "/((?!assets/)(?!api/)(?!favicon\\.png)(?!apple-touch-icon\\.png).*)",
       "destination": "/index.html"
     }
   ]

@@ -1,6 +1,9 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import { LicenseProvider } from '@eranovatechnologies/license';
+import {
+  LicenseProvider,
+  clearCachedLicenseState,
+} from '@eranovatechnologies/license';
 import App from './App.tsx';
 import { LicenseSuspensionFallback } from './license/LicenseSuspensionFallback.tsx';
 import './index.css';
@@ -15,6 +18,10 @@ const applicationVersion =
  * never hits api.eranovatechnologies.com cross-origin (CORS).
  */
 const apiUrl = '';
+
+// Drop stale suspended cache — the SDK restores it before the fresh check
+// and our fallback was redirecting to pay immediately.
+clearCachedLicenseState();
 
 const container = document.getElementById('root');
 if (!container) {
@@ -64,6 +71,7 @@ createRoot(container).render(
         licenseKey={licenseKey}
         applicationVersion={applicationVersion}
         companyName="White Nile and Sudd Centre"
+        enableCache={false}
         suspensionFallback={(state) => <LicenseSuspensionFallback state={state} />}
       >
         <App />

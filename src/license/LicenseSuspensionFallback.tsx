@@ -8,10 +8,11 @@ import { getDefaultStatusMessage } from '@eranovatechnologies/license';
  */
 export function LicenseSuspensionFallback({ state }: { state: LicenseState }) {
   useEffect(() => {
-    if (state.paymentUrl) {
+    // Never redirect from a stale localStorage cache — wait for a live check.
+    if (state.paymentUrl && !state.fromCache && state.status !== 'active') {
       window.location.replace(state.paymentUrl);
     }
-  }, [state.paymentUrl]);
+  }, [state.paymentUrl, state.fromCache, state.status]);
 
   const message = getDefaultStatusMessage(state.status, state.reason);
 

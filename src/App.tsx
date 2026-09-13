@@ -91,6 +91,45 @@ const SOCIAL_LINKS = {
   linkedin: 'https://www.linkedin.com/in/white-nile-and-sudd-center-b3b57140a/',
 } as const;
 
+const MILESTONE_STORIES = [
+  {
+    year: '2026',
+    label: 'Global Conference',
+    title: 'Sudd Wetland Hybrid Global Conference',
+    summary:
+      'In partnership with Wake Forest University’s Andrew Sabin Family Center for Environment and Sustainability, WNSC convened community members from flood-affected areas, local scientists, and government leaders in Juba to chart the future of the Sudd in a changing climate.',
+    image: '/sudd-wetland-conference-linkedin.jpg',
+    imageAlt: 'Delegates at the Sudd Wetland Hybrid Global Conference in Juba',
+    href: 'https://www.linkedin.com/posts/courtney-di-vittorio-9b926726_so-grateful-and-humbled-to-partner-with-the-activity-7457070704564482048-IMsm',
+    source: 'LinkedIn',
+    SourceIcon: Linkedin,
+  },
+  {
+    year: '2026',
+    label: 'National Seminar',
+    title: 'White Nile and Sudd Centre Seminar',
+    summary:
+      'Stakeholders gathered under the WNSC banner for dialogue on wetland science, livelihoods, and national environmental priorities — strengthening the Centre’s role as a convening space for South Sudanese expertise.',
+    image: '/wnsc-facebook-1.jpg',
+    imageAlt: 'Participants at a White Nile and Sudd Centre seminar',
+    href: 'https://www.facebook.com/share/p/1ENPP3YsZm/',
+    source: 'Facebook',
+    SourceIcon: Facebook,
+  },
+  {
+    year: '2026',
+    label: 'Government Partnership',
+    title: 'Courtesy Call — Ministry of Environment & Forestry',
+    summary:
+      'Managing Director Tong Deng Anei and colleagues met the Hon. Minister on a courtesy call to discuss strengthening environmental cooperation — aligning WNSC research with national climate and forestry priorities.',
+    image: '/wnsc-facebook-2.jpg',
+    imageAlt: 'Meeting with the Ministry of Environment and Forestry, South Sudan',
+    href: 'https://www.facebook.com/share/p/17Uckpztwh/',
+    source: 'Facebook',
+    SourceIcon: Facebook,
+  },
+] as const;
+
 const WNSC_LOGO_URL =
   "https://res.cloudinary.com/dpskjlq9m/image/upload/f_auto,q_auto/v1776848787/Screenshot_2026-04-22_at_12-06-13_The_White_Nile_And_Dudd_Centre-2.pdf_a4kdtd.png";
 
@@ -989,6 +1028,106 @@ const AboutPage = () => {
         </div>
       </section>
 
+      {/* Milestones / Achievements */}
+      <section className="bg-water-dark py-32 overflow-hidden relative">
+        <div className="absolute inset-0 opacity-[0.07] pointer-events-none">
+          <img
+            src="/sudd-wetland-conference-linkedin.jpg"
+            alt=""
+            className="w-full h-full object-cover"
+            aria-hidden
+          />
+        </div>
+        <div className="content-section relative z-10">
+          <FadeInSection>
+            <div className="max-w-3xl mb-20">
+              <span className="text-[10px] font-black uppercase tracking-[0.35em] text-water-light/50">Our Journey</span>
+              <h2 className="text-4xl md:text-6xl font-display font-black text-white mt-4 tracking-tighter leading-none">
+                Milestones in motion.
+              </h2>
+              <p className="text-water-light/65 text-lg font-light mt-6 leading-relaxed">
+                From founding the Centre to convening scientists, communities, and government around the Sudd —
+                these moments mark how WNSC turns partnership into national impact.
+              </p>
+            </div>
+          </FadeInSection>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-16">
+            <div className="lg:col-span-4 space-y-8">
+              <FadeInSection delay={0.1}>
+                <div className="space-y-8">
+                  {[
+                    { step: '01', title: 'Founded', text: 'Established as a South Sudanese water & wetlands think tank (2022).' },
+                    { step: '02', title: 'Convened', text: 'Brought flood-affected communities, scientists, and leaders to Juba.' },
+                    { step: '03', title: 'Partnered', text: 'Deepened ties with Wake Forest University and national ministries.' },
+                  ].map((item) => (
+                    <div key={item.step} className="border-l border-white/15 pl-6">
+                      <div className="text-[10px] font-black uppercase tracking-[0.3em] text-nile-blue mb-2">{item.step}</div>
+                      <h3 className="text-xl font-display font-black text-white mb-2">{item.title}</h3>
+                      <p className="text-sm text-water-light/55 leading-relaxed font-light">{item.text}</p>
+                    </div>
+                  ))}
+                  <blockquote className="mt-10 rounded-[2rem] bg-white/5 border border-white/10 p-8">
+                    <p className="text-white/90 text-lg font-light italic leading-relaxed">
+                      “We are Anyana, for we don’t sleep.”
+                    </p>
+                    <p className="text-[10px] font-black uppercase tracking-[0.25em] text-water-light/40 mt-4">
+                      Shared at the close of the Sudd Wetland conference
+                    </p>
+                  </blockquote>
+                </div>
+              </FadeInSection>
+            </div>
+
+            <div className="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+              {MILESTONE_STORIES.map((story, i) => {
+                const SourceIcon = story.SourceIcon;
+                return (
+                  <div key={story.href} className={i === 0 ? 'md:col-span-2' : undefined}>
+                    <FadeInSection delay={0.15 + i * 0.08}>
+                      <a
+                        href={story.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group block h-full overflow-hidden rounded-[2.5rem] border border-white/10 bg-white/5 hover:bg-white/10 transition-all duration-500"
+                      >
+                        <div className={`relative overflow-hidden ${i === 0 ? 'h-64 md:h-80' : 'h-52'}`}>
+                          <img
+                            src={story.image}
+                            alt={story.imageAlt}
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-water-dark via-water-dark/20 to-transparent" />
+                          <div className="absolute top-5 left-5 flex flex-wrap items-center gap-2">
+                            <span className="px-3 py-1.5 rounded-full bg-white/90 text-[10px] font-black uppercase tracking-widest text-water-dark">
+                              {story.year}
+                            </span>
+                            <span className="px-3 py-1.5 rounded-full bg-nile-blue/90 text-[10px] font-black uppercase tracking-widest text-white">
+                              {story.label}
+                            </span>
+                          </div>
+                        </div>
+                        <div className="p-8 space-y-4">
+                          <h3 className="text-2xl font-display font-black text-white tracking-tight group-hover:text-water-light transition-colors">
+                            {story.title}
+                          </h3>
+                          <p className="text-water-light/60 text-sm leading-relaxed font-light">{story.summary}</p>
+                          <div className="flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.2em] text-nile-blue">
+                            <SourceIcon size={14} />
+                            View on {story.source}
+                            <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                          </div>
+                        </div>
+                      </a>
+                    </FadeInSection>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Team/Leadership Section */}
       <section className="bg-slate-50 py-32 overflow-hidden">
         <div className="content-section">
@@ -997,7 +1136,7 @@ const AboutPage = () => {
               <span className="text-[10px] font-black uppercase tracking-[0.3em] text-nile-blue">The Collective</span>
               <h2 className="text-5xl font-display font-black text-water-dark mt-4 tracking-tighter">Leadership</h2>
               <p className="text-slate-500 text-lg font-light mt-6 leading-relaxed">
-                Tong Deng Anei serves as Executive Director. Joshua Dau Diu serves as Chairman of the Board of Trustees. Isaac Liabwel C. Yol serves as Deputy Chairman of the Board of Trustees. Members of the Board of Trustees provide governance and strategic oversight.
+                At the leadership level of the White Nile and Sudd Centre, Tong Deng Anei serves as Managing Director, Hon. Joshua Dau Diu is Chairman of the Board of Trustees and Engineer Isaac Liabwel C. Yol serves as Deputy Chairman of the Board of Trustees. All the members of the Board of Trustees provide governance and strategic oversight.
               </p>
               <div className="w-20 h-1 bg-nile-blue mx-auto mt-8 rounded-full" />
             </div>
@@ -1010,18 +1149,18 @@ const AboutPage = () => {
                 <div className="lg:col-span-4 flex flex-col items-center lg:items-start text-center lg:text-left">
                   <img
                     src="/tong-deng-anei.png"
-                    alt="Tong Deng Anei, Executive Director"
+                    alt="Tong Deng Anei, Managing Director"
                     className="w-40 h-40 rounded-[2.5rem] object-cover object-top mb-6 shadow-lg border-4 border-white ring-2 ring-wetland-green/20"
                   />
                   <h3 className="text-3xl font-display font-black text-slate-900 tracking-tight">Tong Deng Anei</h3>
-                  <p className="text-wetland-green text-[10px] font-black uppercase tracking-[0.2em] mt-3 mb-4">Executive Director</p>
+                  <p className="text-wetland-green text-[10px] font-black uppercase tracking-[0.2em] mt-3 mb-4">Managing Director</p>
                   <p className="text-slate-500 text-sm font-medium leading-relaxed">
                     Food Security and Livelihoods Consultant · Juba, South Sudan
                   </p>
                 </div>
                 <div className="lg:col-span-8 space-y-6 text-slate-600 text-lg leading-relaxed font-light">
                   <p>
-                    Tong Deng Anei is the Executive Director and a founding member of the White Nile and Sudd Centre. He is a Food Security and Livelihoods Consultant based in Juba, South Sudan. Anei has over 20 years of experience designing and implementing humanitarian assistance programmes, having previously worked with the United States Agency for International Development (USAID), the United Nations, and government institutions where he served in two Ministerial positions as State Minister of Culture, Youth and Sports and State Minister of Health.
+                    Tong Deng Anei is the Managing Director and a founding member of the White Nile and Sudd Centre. He is a Food Security and Livelihoods Consultant based in Juba, South Sudan. Anei has over 20 years of experience designing and implementing humanitarian assistance programmes, having previously worked with the United States Agency for International Development (USAID), the United Nations, and government institutions where he served in two Ministerial positions as State Minister of Culture, Youth and Sports and State Minister of Health.
                   </p>
                   <p>
                     Apart from his work at the White Nile and Sudd Centre, he currently consults with national and international organizations as well as government agencies. His research focuses on the humanitarian crisis and mass starvation in South Sudan. He also received training in Social Science through the Humanitarian Platform Skill-Building Programme, which enabled him to pursue evidence-based research and advance his professional and academic development. Anei holds a Master of Arts in Humanitarian Assistance from Tufts University.
@@ -1044,7 +1183,7 @@ const AboutPage = () => {
                   <div className="w-40 h-40 bg-slate-50 rounded-[2.5rem] flex items-center justify-center text-slate-200 mb-6 shadow-inner ring-2 ring-nile-blue/20">
                     <Users size={56} />
                   </div>
-                  <h3 className="text-3xl font-display font-black text-slate-900 tracking-tight">The Honorable Joshua Dau Diu</h3>
+                  <h3 className="text-3xl font-display font-black text-slate-900 tracking-tight">Hon. Joshua Dau Diu</h3>
                   <p className="text-nile-blue text-[10px] font-black uppercase tracking-[0.2em] mt-3 mb-4">Chairman · Board of Trustees</p>
                   <p className="text-slate-500 text-sm font-medium leading-relaxed">
                     Theologian, Pastor &amp; Member of the Council of States · Juba, South Sudan
@@ -1052,7 +1191,7 @@ const AboutPage = () => {
                 </div>
                 <div className="lg:col-span-8 space-y-6 text-slate-600 text-lg leading-relaxed font-light">
                   <p>
-                    The Honorable Joshua Dau Diu is the Chairman of the Board of Trustees of the White Nile and Sudd Centre since the inception of the centre in 2022. He is a dedicated theologian, pastor, and public servant with decades of leadership in religious and national affairs. Ordained as a Pastor in the Presbyterian Church in 1970, he earned a Master&apos;s degree in Theology in 1972 in Beirut, Lebanon.
+                    Hon. Joshua Dau Diu is the Chairman of the Board of Trustees of the White Nile and Sudd Centre since the inception of the centre in 2022. He is a dedicated theologian, pastor, and public servant with decades of leadership in religious and national affairs. Ordained as a Pastor in the Presbyterian Church in 1970, he earned a Master&apos;s degree in Theology in 1972 in Beirut, Lebanon.
                   </p>
                   <p>
                     His early career was dedicated to theological education, serving as a lecturer at Bishop Tucker Theological College in Uganda (1975–1976) and St. Paul&apos;s Theological College in Kenya (1976–1978).
@@ -1075,10 +1214,10 @@ const AboutPage = () => {
                 <div className="lg:col-span-4 flex flex-col items-center lg:items-start text-center lg:text-left">
                   <img
                     src="/isaac-liabwel-yol.png"
-                    alt="Isaac Liabwel C. Yol, Deputy Chairman of the Board of Trustees"
+                    alt="Engineer Isaac Liabwel C. Yol, Deputy Chairman of the Board of Trustees"
                     className="w-40 h-40 rounded-[2.5rem] object-cover object-top mb-6 shadow-lg border-4 border-white ring-2 ring-nile-blue/20"
                   />
-                  <h3 className="text-3xl font-display font-black text-slate-900 tracking-tight">Isaac Liabwel C. Yol</h3>
+                  <h3 className="text-3xl font-display font-black text-slate-900 tracking-tight">Engineer Isaac Liabwel C. Yol</h3>
                   <p className="text-nile-blue text-[10px] font-black uppercase tracking-[0.2em] mt-3 mb-4">Deputy Chairman of Board of Trustees</p>
                   <p className="text-slate-500 text-sm font-medium leading-relaxed">
                     Former Undersecretary, Ministry of Water Resources and Irrigation · South Sudan
@@ -1170,30 +1309,36 @@ const AboutPage = () => {
             </article>
           </FadeInSection>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-10">
-            {[
-              { name: "Dr. John Leju Celestino Ladu", role: "Member", image: "/john-leju-ladu.png" }
-            ].map((member, i) => (
-              <FadeInSection key={member.name} delay={i * 0.08}>
-                <div className="group bg-white p-12 rounded-[4rem] border border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-700 text-center relative overflow-hidden">
-                  <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-nile-blue/20 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700" />
-                  {member.image ? (
-                    <img
-                      src={member.image}
-                      alt={member.name}
-                      className="w-28 h-28 rounded-[2.5rem] object-cover object-top mx-auto mb-8 shadow-lg border-4 border-white ring-2 ring-nile-blue/20"
-                    />
-                  ) : (
-                    <div className="w-28 h-28 bg-slate-50 rounded-[2.5rem] mx-auto mb-8 flex items-center justify-center text-slate-200 group-hover:bg-nile-blue/10 group-hover:text-nile-blue group-hover:rotate-6 transition-all duration-500 shadow-inner">
-                      <Users size={48} />
-                    </div>
-                  )}
-                  <h3 className="text-xl font-display font-black text-slate-900 mb-2 leading-snug">{member.name}</h3>
-                  <p className="text-nile-blue text-[10px] font-black uppercase tracking-[0.2em]">Member of Board of Trustees</p>
+          <FadeInSection delay={0.48}>
+            <article className="bg-white rounded-[4rem] p-12 md:p-20 border border-slate-100 shadow-sm mb-20 relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-72 h-72 bg-nile-blue/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 relative z-10">
+                <div className="lg:col-span-4 flex flex-col items-center lg:items-start text-center lg:text-left">
+                  <img
+                    src="/john-leju-ladu.png"
+                    alt="Dr. John Leju Celestino Ladu, Member of Board of Trustees"
+                    className="w-40 h-40 rounded-[2.5rem] object-cover object-top mb-6 shadow-lg border-4 border-white ring-2 ring-nile-blue/20"
+                  />
+                  <h3 className="text-3xl font-display font-black text-slate-900 tracking-tight">Dr. John Leju Celestino Ladu</h3>
+                  <p className="text-nile-blue text-[10px] font-black uppercase tracking-[0.2em] mt-3 mb-4">Member of Board of Trustees</p>
+                  <p className="text-slate-500 text-sm font-medium leading-relaxed">
+                    Associate Professor, Department of Environmental Studies · University of Juba
+                  </p>
                 </div>
-              </FadeInSection>
-            ))}
-          </div>
+                <div className="lg:col-span-8 space-y-6 text-slate-600 text-lg leading-relaxed font-light">
+                  <p>
+                    Dr. John Leju Celestino Ladu is an Associate Professor in the Department of Environmental Studies at the University of Juba. He teaches Environmental Sciences at undergraduate (BSc) and postgraduate (MSc and PhD) levels and supervises research across all academic tiers. Dr. Ladu holds a BSc in Environmental Studies from the University of Juba, an MSc in Hydrology and Water Resources from Hohai University, China, and a PhD in Wastewater Treatment Technology from Southeast University, China, where he also completed a postdoctoral fellowship.
+                  </p>
+                  <p>
+                    His expertise spans environmental and social impact assessment, wastewater treatment technology, water supply, ecological sanitation, solid waste management, climate change, environmental monitoring, and natural resources management. He has served as Deputy Dean of the College of Natural Resources and Environmental Studies and Deputy Chairman of the University of Juba Staff Association. Nationally, he is a member of the Specialized Scientific Committee for Environmental Science under the National Council for Higher Education and serves on the steering committee for the National Adaptation Plan of Action on Climate Change.
+                  </p>
+                  <p>
+                    Dr. Ladu has over 50 publications and has participated in numerous international conferences. He is a Board and founding member of the White Nile and Sudd Centre. He also works as an environmental consultant, including with the Food and Agriculture Organization of the United Nations (FAO) and the Nile Basin Initiative.
+                  </p>
+                </div>
+              </div>
+            </article>
+          </FadeInSection>
 
           <div className="py-14 text-center">
             <h3 className="text-4xl md:text-5xl font-display font-black text-water-dark tracking-tighter">Management Board</h3>
@@ -1293,11 +1438,21 @@ const ResearchPage = () => {
     { title: "Sudd Biodiversity", count: "92 Records", icon: <Droplet className="text-water-blue" /> }
   ];
 
-  const handleDownload = (title: string) => {
-    // In a real production environment, this would initiate a request to a secure document server.
-    // For this prototype, we simulate the interaction by logging the request and providing a success modal/effect.
-    console.log(`[SECURE_STORAGE] Initializing download for: ${title}`);
-    
+  const handleDownload = (title: string, file?: string) => {
+    if (file) {
+      const link = document.createElement('a');
+      link.href = file;
+      link.download = file.split('/').pop() || 'wnsc-document.pdf';
+      link.rel = 'noopener';
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      return;
+    }
+
+    // Placeholder for publications without a hosted PDF yet.
+    console.log(`[SECURE_STORAGE] Document not yet published: ${title}`);
+
     const toast = document.createElement('div');
     toast.className = 'fixed bottom-10 left-1/2 -translate-x-1/2 bg-water-dark/95 backdrop-blur-xl text-white px-8 py-4 rounded-3xl shadow-2xl z-[100] border border-white/10 flex items-center gap-4 animate-in fade-in slide-in-from-bottom-5';
     toast.innerHTML = `
@@ -1305,12 +1460,12 @@ const ResearchPage = () => {
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
       </div>
       <div>
-        <div class="text-[10px] uppercase font-black tracking-widest text-water-light/50">SECURE TRANSFER</div>
-        <div class="font-bold">Downloading: ${title.substring(0, 30)}...</div>
+        <div class="text-[10px] uppercase font-black tracking-widest text-water-light/50">ARCHIVE</div>
+        <div class="font-bold">PDF coming soon: ${title.substring(0, 28)}...</div>
       </div>
     `;
     document.body.appendChild(toast);
-    
+
     setTimeout(() => {
       toast.classList.add('animate-out', 'fade-out', 'slide-out-to-bottom-5');
       setTimeout(() => toast.remove(), 500);
@@ -1376,6 +1531,13 @@ const ResearchPage = () => {
           
           <div className="grid grid-cols-1 gap-8">
             {[
+              {
+                title: "Press Release on Conclusion of the Sudd Wetland Hybrid Global Conference",
+                date: "May 2, 2026",
+                category: "Press Release",
+                type: "Official Statement",
+                file: "/press-release-sudd-wetland-conference-may-2026.pdf",
+              },
               { 
                 title: "Impacts of Climate Change on the Sudd Wetland: WNSC & Wake Forest Global Conference", 
                 date: "May 2026",
@@ -1409,10 +1571,13 @@ const ResearchPage = () => {
                       <span className="text-[10px] font-black text-nile-blue uppercase tracking-widest">{pub.type}</span>
                     </div>
                     <h3 className="text-2xl font-display font-black text-slate-900 group-hover:text-nile-blue transition-colors leading-tight">{pub.title}</h3>
-                    <p className="text-sm text-slate-400 font-medium">Published on {pub.date} • Peer Reviewed</p>
+                    <p className="text-sm text-slate-400 font-medium">
+                      Published on {pub.date}
+                      {'file' in pub && pub.file ? ' • PDF available' : ' • Peer Reviewed'}
+                    </p>
                   </div>
                   <button 
-                    onClick={() => handleDownload(pub.title)}
+                    onClick={() => handleDownload(pub.title, 'file' in pub ? pub.file : undefined)}
                     className="mt-8 md:mt-0 px-8 py-4 border-2 border-slate-100 rounded-2xl font-bold text-sm text-slate-600 hover:bg-slate-900 hover:text-white hover:border-slate-900 flex items-center justify-center gap-3 group/btn transition-all"
                   >
                     Download PDF <Download size={20} className="text-nile-blue group-hover/btn:text-white transition-colors" />

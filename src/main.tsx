@@ -19,9 +19,28 @@ const applicationVersion =
  */
 const apiUrl = '';
 
+const hostname =
+  typeof window !== 'undefined' ? window.location.hostname.toLowerCase() : '';
+const isLocalHost =
+  hostname === 'localhost' ||
+  hostname === '127.0.0.1' ||
+  hostname === '[::1]';
+
+/**
+ * Local-only escape hatch when HostPilot is unreachable.
+ * Requires Vite DEV mode + localhost + VITE_LICENSE_DEV_BYPASS=true.
+ * Never active in production builds (import.meta.env.DEV is false).
+ */
+const licenseDevBypass =
+  import.meta.env.DEV &&
+  isLocalHost &&
+  import.meta.env.VITE_LICENSE_DEV_BYPASS === 'true';
+
 // Drop stale suspended cache — the SDK restores it before the fresh check
 // and our fallback was redirecting to pay immediately.
-clearCachedLicenseState();
+if (!licenseDevBypass) {
+  clearCachedLicenseState();
+}
 
 const container = document.getElementById('root');
 if (!container) {
@@ -63,7 +82,9 @@ function MissingLicenseEnvScreen() {
 
 createRoot(container).render(
   <StrictMode>
-    {!licenseKey ? (
+    {licenseDevBypass ? (
+      <App />
+    ) : !licenseKey ? (
       <MissingLicenseEnvScreen />
     ) : (
       <LicenseProvider

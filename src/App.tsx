@@ -146,6 +146,107 @@ const FadeInSection = ({ children, delay = 0, y = 20 }: { children: ReactNode, d
   </motion.div>
 );
 
+const MilestonesSection = () => (
+  <section className="bg-water-dark py-32 overflow-hidden relative">
+    <div className="absolute inset-0 opacity-[0.07] pointer-events-none">
+      <img
+        src="/sudd-wetland-conference-linkedin.jpg"
+        alt=""
+        className="w-full h-full object-cover"
+        aria-hidden
+      />
+    </div>
+    <div className="content-section relative z-10">
+      <FadeInSection>
+        <div className="max-w-3xl mb-20">
+          <span className="text-[10px] font-black uppercase tracking-[0.35em] text-water-light/50">Our Journey</span>
+          <h2 className="text-4xl md:text-6xl font-display font-black text-white mt-4 tracking-tighter leading-none">
+            Milestones in motion.
+          </h2>
+          <p className="text-water-light/65 text-lg font-light mt-6 leading-relaxed">
+            From founding the Centre to convening scientists, communities, and government around the Sudd —
+            these moments mark how WNSC turns partnership into national impact.
+          </p>
+        </div>
+      </FadeInSection>
+
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-16">
+        <div className="lg:col-span-4 space-y-8">
+          <FadeInSection delay={0.1}>
+            <div className="space-y-8">
+              {[
+                { step: '01', title: 'Founded', text: 'Established as a South Sudanese water & wetlands think tank (2022).' },
+                { step: '02', title: 'Convened', text: 'Brought flood-affected communities, scientists, and leaders to Juba.' },
+                { step: '03', title: 'Partnered', text: 'Deepened ties with Wake Forest University and national ministries.' },
+              ].map((item) => (
+                <div key={item.step} className="border-l border-white/15 pl-6">
+                  <div className="text-[10px] font-black uppercase tracking-[0.3em] text-nile-blue mb-2">{item.step}</div>
+                  <h3 className="text-xl font-display font-black text-white mb-2">{item.title}</h3>
+                  <p className="text-sm text-water-light/55 leading-relaxed font-light">{item.text}</p>
+                </div>
+              ))}
+              <blockquote className="mt-10 rounded-[2rem] bg-white/5 border border-white/10 p-8">
+                <p className="text-white/90 text-lg font-light italic leading-relaxed">
+                  “We are Anyana, for we don’t sleep.”
+                </p>
+                <p className="text-[10px] font-black uppercase tracking-[0.25em] text-water-light/40 mt-4">
+                  Shared at the close of the Sudd Wetland conference
+                </p>
+              </blockquote>
+            </div>
+          </FadeInSection>
+        </div>
+
+        <div className="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+          {MILESTONE_STORIES.map((story, i) => {
+            const SourceIcon = story.SourceIcon;
+            return (
+              <div key={story.href} className={i === 0 ? 'md:col-span-2' : undefined}>
+                <FadeInSection delay={0.15 + i * 0.08}>
+                  <a
+                    href={story.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group block h-full overflow-hidden rounded-[2.5rem] border border-white/10 bg-white/5 hover:bg-white/10 transition-all duration-500"
+                  >
+                    <div className={`relative overflow-hidden ${i === 0 ? 'h-64 md:h-80' : 'h-52'}`}>
+                      <img
+                        src={story.image}
+                        alt={story.imageAlt}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-water-dark via-water-dark/20 to-transparent" />
+                      <div className="absolute top-5 left-5 flex flex-wrap items-center gap-2">
+                        <span className="px-3 py-1.5 rounded-full bg-white/90 text-[10px] font-black uppercase tracking-widest text-water-dark">
+                          {story.year}
+                        </span>
+                        <span className="px-3 py-1.5 rounded-full bg-nile-blue/90 text-[10px] font-black uppercase tracking-widest text-white">
+                          {story.label}
+                        </span>
+                      </div>
+                    </div>
+                    <div className="p-8 space-y-4">
+                      <h3 className="text-2xl font-display font-black text-white tracking-tight group-hover:text-water-light transition-colors">
+                        {story.title}
+                      </h3>
+                      <p className="text-water-light/60 text-sm leading-relaxed font-light">{story.summary}</p>
+                      <div className="flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.2em] text-nile-blue">
+                        <SourceIcon size={14} />
+                        View on {story.source}
+                        <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                      </div>
+                    </div>
+                  </a>
+                </FadeInSection>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
 const SearchSection = () => {
   const [query, setQuery] = useState("");
   const [matched, setMatched] = useState<KnowledgeEntry[] | null>(null);
@@ -847,6 +948,8 @@ const HomePage = () => {
         </div>
       </section>
 
+      <MilestonesSection />
+
       {/* Call to Action */}
       <section className="bg-wetland-dark py-24 text-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-wetland-green/20 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2" />
@@ -1028,106 +1131,6 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* Milestones / Achievements */}
-      <section className="bg-water-dark py-32 overflow-hidden relative">
-        <div className="absolute inset-0 opacity-[0.07] pointer-events-none">
-          <img
-            src="/sudd-wetland-conference-linkedin.jpg"
-            alt=""
-            className="w-full h-full object-cover"
-            aria-hidden
-          />
-        </div>
-        <div className="content-section relative z-10">
-          <FadeInSection>
-            <div className="max-w-3xl mb-20">
-              <span className="text-[10px] font-black uppercase tracking-[0.35em] text-water-light/50">Our Journey</span>
-              <h2 className="text-4xl md:text-6xl font-display font-black text-white mt-4 tracking-tighter leading-none">
-                Milestones in motion.
-              </h2>
-              <p className="text-water-light/65 text-lg font-light mt-6 leading-relaxed">
-                From founding the Centre to convening scientists, communities, and government around the Sudd —
-                these moments mark how WNSC turns partnership into national impact.
-              </p>
-            </div>
-          </FadeInSection>
-
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-16">
-            <div className="lg:col-span-4 space-y-8">
-              <FadeInSection delay={0.1}>
-                <div className="space-y-8">
-                  {[
-                    { step: '01', title: 'Founded', text: 'Established as a South Sudanese water & wetlands think tank (2022).' },
-                    { step: '02', title: 'Convened', text: 'Brought flood-affected communities, scientists, and leaders to Juba.' },
-                    { step: '03', title: 'Partnered', text: 'Deepened ties with Wake Forest University and national ministries.' },
-                  ].map((item) => (
-                    <div key={item.step} className="border-l border-white/15 pl-6">
-                      <div className="text-[10px] font-black uppercase tracking-[0.3em] text-nile-blue mb-2">{item.step}</div>
-                      <h3 className="text-xl font-display font-black text-white mb-2">{item.title}</h3>
-                      <p className="text-sm text-water-light/55 leading-relaxed font-light">{item.text}</p>
-                    </div>
-                  ))}
-                  <blockquote className="mt-10 rounded-[2rem] bg-white/5 border border-white/10 p-8">
-                    <p className="text-white/90 text-lg font-light italic leading-relaxed">
-                      “We are Anyana, for we don’t sleep.”
-                    </p>
-                    <p className="text-[10px] font-black uppercase tracking-[0.25em] text-water-light/40 mt-4">
-                      Shared at the close of the Sudd Wetland conference
-                    </p>
-                  </blockquote>
-                </div>
-              </FadeInSection>
-            </div>
-
-            <div className="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-6">
-              {MILESTONE_STORIES.map((story, i) => {
-                const SourceIcon = story.SourceIcon;
-                return (
-                  <div key={story.href} className={i === 0 ? 'md:col-span-2' : undefined}>
-                    <FadeInSection delay={0.15 + i * 0.08}>
-                      <a
-                        href={story.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="group block h-full overflow-hidden rounded-[2.5rem] border border-white/10 bg-white/5 hover:bg-white/10 transition-all duration-500"
-                      >
-                        <div className={`relative overflow-hidden ${i === 0 ? 'h-64 md:h-80' : 'h-52'}`}>
-                          <img
-                            src={story.image}
-                            alt={story.imageAlt}
-                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                          />
-                          <div className="absolute inset-0 bg-gradient-to-t from-water-dark via-water-dark/20 to-transparent" />
-                          <div className="absolute top-5 left-5 flex flex-wrap items-center gap-2">
-                            <span className="px-3 py-1.5 rounded-full bg-white/90 text-[10px] font-black uppercase tracking-widest text-water-dark">
-                              {story.year}
-                            </span>
-                            <span className="px-3 py-1.5 rounded-full bg-nile-blue/90 text-[10px] font-black uppercase tracking-widest text-white">
-                              {story.label}
-                            </span>
-                          </div>
-                        </div>
-                        <div className="p-8 space-y-4">
-                          <h3 className="text-2xl font-display font-black text-white tracking-tight group-hover:text-water-light transition-colors">
-                            {story.title}
-                          </h3>
-                          <p className="text-water-light/60 text-sm leading-relaxed font-light">{story.summary}</p>
-                          <div className="flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.2em] text-nile-blue">
-                            <SourceIcon size={14} />
-                            View on {story.source}
-                            <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-                          </div>
-                        </div>
-                      </a>
-                    </FadeInSection>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Team/Leadership Section */}
       <section className="bg-slate-50 py-32 overflow-hidden">
         <div className="content-section">
@@ -1140,34 +1143,6 @@ const AboutPage = () => {
               </p>
               <div className="w-20 h-1 bg-nile-blue mx-auto mt-8 rounded-full" />
             </div>
-          </FadeInSection>
-
-          <FadeInSection delay={0.1}>
-            <article className="bg-white rounded-[4rem] p-12 md:p-20 border border-slate-100 shadow-sm mb-0 relative overflow-hidden">
-              <div className="absolute top-0 left-0 w-72 h-72 bg-wetland-green/5 rounded-full blur-3xl -translate-y-1/2 -translate-x-1/2" />
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 relative z-10">
-                <div className="lg:col-span-4 flex flex-col items-center lg:items-start text-center lg:text-left">
-                  <img
-                    src="/tong-deng-anei.png"
-                    alt="Tong Deng Anei, Managing Director"
-                    className="w-40 h-40 rounded-[2.5rem] object-cover object-top mb-6 shadow-lg border-4 border-white ring-2 ring-wetland-green/20"
-                  />
-                  <h3 className="text-3xl font-display font-black text-slate-900 tracking-tight">Tong Deng Anei</h3>
-                  <p className="text-wetland-green text-[10px] font-black uppercase tracking-[0.2em] mt-3 mb-4">Managing Director</p>
-                  <p className="text-slate-500 text-sm font-medium leading-relaxed">
-                    Food Security and Livelihoods Consultant · Juba, South Sudan
-                  </p>
-                </div>
-                <div className="lg:col-span-8 space-y-6 text-slate-600 text-lg leading-relaxed font-light">
-                  <p>
-                    Tong Deng Anei is the Managing Director and a founding member of the White Nile and Sudd Centre. He is a Food Security and Livelihoods Consultant based in Juba, South Sudan. Anei has over 20 years of experience designing and implementing humanitarian assistance programmes, having previously worked with the United States Agency for International Development (USAID), the United Nations, and government institutions where he served in two Ministerial positions as State Minister of Culture, Youth and Sports and State Minister of Health.
-                  </p>
-                  <p>
-                    Apart from his work at the White Nile and Sudd Centre, he currently consults with national and international organizations as well as government agencies. His research focuses on the humanitarian crisis and mass starvation in South Sudan. He also received training in Social Science through the Humanitarian Platform Skill-Building Programme, which enabled him to pursue evidence-based research and advance his professional and academic development. Anei holds a Master of Arts in Humanitarian Assistance from Tufts University.
-                  </p>
-                </div>
-              </div>
-            </article>
           </FadeInSection>
 
           <div className="py-14 text-center">
@@ -1344,6 +1319,34 @@ const AboutPage = () => {
             <h3 className="text-4xl md:text-5xl font-display font-black text-water-dark tracking-tighter">Management Board</h3>
             <div className="w-20 h-1 bg-nile-blue mx-auto mt-6 rounded-full" />
           </div>
+
+          <FadeInSection delay={0.48}>
+            <article className="bg-white rounded-[4rem] p-12 md:p-20 border border-wetland-green/30 ring-1 ring-wetland-green/10 shadow-sm mb-20 relative overflow-hidden">
+              <div className="absolute top-0 left-0 w-72 h-72 bg-wetland-green/5 rounded-full blur-3xl -translate-y-1/2 -translate-x-1/2" />
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 relative z-10">
+                <div className="lg:col-span-4 flex flex-col items-center lg:items-start text-center lg:text-left">
+                  <img
+                    src="/tong-deng-anei.png"
+                    alt="Tong Deng Anei, Managing Director"
+                    className="w-40 h-40 rounded-[2.5rem] object-cover object-top mb-6 shadow-lg border-4 border-white ring-2 ring-wetland-green/20"
+                  />
+                  <h3 className="text-3xl font-display font-black text-slate-900 tracking-tight">Tong Deng Anei</h3>
+                  <p className="text-wetland-green text-[10px] font-black uppercase tracking-[0.2em] mt-3 mb-4">Managing Director</p>
+                  <p className="text-slate-500 text-sm font-medium leading-relaxed">
+                    Food Security and Livelihoods Consultant · Juba, South Sudan
+                  </p>
+                </div>
+                <div className="lg:col-span-8 space-y-6 text-slate-600 text-lg leading-relaxed font-light">
+                  <p>
+                    Tong Deng Anei is the Managing Director and a founding member of the White Nile and Sudd Centre. He is a Food Security and Livelihoods Consultant based in Juba, South Sudan. Anei has over 20 years of experience designing and implementing humanitarian assistance programmes, having previously worked with the United States Agency for International Development (USAID), the United Nations, and government institutions where he served in two Ministerial positions as State Minister of Culture, Youth and Sports and State Minister of Health.
+                  </p>
+                  <p>
+                    Apart from his work at the White Nile and Sudd Centre, he currently consults with national and international organizations as well as government agencies. His research focuses on the humanitarian crisis and mass starvation in South Sudan. He also received training in Social Science through the Humanitarian Platform Skill-Building Programme, which enabled him to pursue evidence-based research and advance his professional and academic development. Anei holds a Master of Arts in Humanitarian Assistance from Tufts University.
+                  </p>
+                </div>
+              </div>
+            </article>
+          </FadeInSection>
 
           <FadeInSection delay={0.5}>
             <article className="bg-white rounded-[4rem] p-12 md:p-20 border border-slate-100 shadow-sm mb-20 relative overflow-hidden">

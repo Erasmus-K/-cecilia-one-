@@ -1316,9 +1316,11 @@ const AboutPage = () => {
               <div className="absolute top-0 right-0 w-72 h-72 bg-nile-blue/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 relative z-10">
                 <div className="lg:col-span-4 flex flex-col items-center lg:items-start text-center lg:text-left">
-                  <div className="w-40 h-40 bg-slate-50 rounded-[2.5rem] flex items-center justify-center text-slate-200 mb-6 shadow-inner ring-2 ring-nile-blue/20">
-                    <Users size={56} />
-                  </div>
+                  <img
+                    src="/joshua-dau-diu.png"
+                    alt="Hon. Joshua Dau Diu, Chairman of the Board of Trustees"
+                    className="w-40 h-40 rounded-[2.5rem] object-cover object-top mb-6 shadow-lg border-4 border-white ring-2 ring-nile-blue/20"
+                  />
                   <h3 className="text-3xl font-display font-black text-slate-900 tracking-tight">Hon. Joshua Dau Diu</h3>
                   <p className="text-nile-blue text-[10px] font-black uppercase tracking-[0.2em] mt-3 mb-4">Chairman · Board of Trustees</p>
                   <p className="text-slate-500 text-sm font-medium leading-relaxed">

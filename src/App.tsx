@@ -201,6 +201,7 @@ const GALLERY_PHOTOS = [
   { src: '/gallery/wnsc-foyer-pyramid-hotel.png', title: 'WNSC at Pyramid Hotel', caption: 'Delegates beside the White Nile and Sudd Centre foyer display in Juba.' },
   { src: '/gallery/conference-colleagues-sofa.png', title: 'Conference colleagues', caption: 'Participants sharing a moment between sessions at a WNSC event.' },
   { src: '/gallery/wnsc-moderator-portrait.png', title: 'WNSC moderator', caption: 'Event moderator wearing a White Nile and Sudd Centre badge.' },
+  { src: '/gallery/akobo-town-akobo-pibor-river.png', title: 'Akobo town', caption: 'Akobo town on the Akobo–Pibor River during the rainy season. Great environment.' },
 ] as const;
 
 const PRESS_RELEASES = [

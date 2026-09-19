@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState, useEffect, type ChangeEvent, type FormEvent, type ReactNode } from 'react';
+import React, { useState, useEffect, useRef, type ChangeEvent, type FormEvent, type ReactNode } from 'react';
 import { BrowserRouter, Routes, Route, Link, useLocation, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence, useScroll, useTransform } from 'motion/react';
 import { 
@@ -22,6 +22,8 @@ import {
   Menu,
   X,
   ChevronDown,
+  ChevronLeft,
+  ChevronRight,
   Search,
   FileText,
   Globe,
@@ -204,7 +206,44 @@ const GALLERY_PHOTOS = [
   { src: '/gallery/akobo-town-akobo-pibor-river.png', title: 'Akobo town', caption: 'Akobo town on the Akobo–Pibor River during the rainy season. Great environment.' },
 ] as const;
 
+const GALLERY_VIDEOS = [
+  {
+    src: '/gallery/videos/field-video-01.mp4',
+    title: 'River transit on the water',
+    caption: 'On-boat travel through a wide river corridor during field movement across the basin.',
+  },
+  {
+    src: '/gallery/videos/field-video-02.mp4',
+    title: 'Open river corridor',
+    caption: 'View from a moving boat across open water toward green riverbank vegetation.',
+  },
+  {
+    src: '/gallery/videos/field-video-03.mp4',
+    title: 'Rural path walk',
+    caption: 'Walking a village path through agricultural fields during the rainy season.',
+  },
+  {
+    src: '/gallery/videos/field-video-04.mp4',
+    title: 'Onion harvest store',
+    caption: 'Inside a thatch storehouse holding a large community onion harvest.',
+  },
+  {
+    src: '/gallery/videos/field-video-05.mp4',
+    title: 'Wetland shoreline passage',
+    caption: 'Boat wake along reed-lined shoreline in a wetland river system.',
+  },
+] as const;
+
 const PRESS_RELEASES = [
+  {
+    title: 'Condolence Message and Tribute on the Passing of Hon. Uncle Bona Malwal Madut Ring',
+    category: 'Tribute',
+    date: 'November 3, 2025',
+    image: '/gallery/field-whatsapp-01.jpg',
+    summary:
+      'On behalf of the Board of Trustees and membership of the White Nile and Sudd Centre, a tribute to Hon. Bona Malwal Madut Ring — journalist, economist, and iconic political figure whose lifelong advocacy helped shape South Sudan’s path to self-determination and independence.',
+    file: '/press/condolence-tribute-bona-malwal-madut-ring.pdf',
+  },
   {
     title: 'Press Release on First Conference with Wake Forest University',
     category: 'Press Release',
@@ -2267,7 +2306,7 @@ const NewsPage = () => (
       <FadeInSection>
         <div className="mb-10">
           <span className="text-[10px] font-black uppercase tracking-[0.3em] text-nile-blue">Official Statements</span>
-          <h2 className="text-3xl md:text-4xl font-display font-black text-water-dark mt-3">Press releases</h2>
+          <h2 className="text-3xl md:text-4xl font-display font-black text-water-dark mt-3">Statements & press releases</h2>
         </div>
       </FadeInSection>
       <div className="space-y-8">
@@ -2300,7 +2339,22 @@ const NewsPage = () => (
   </motion.div>
 );
 
-const GalleryPage = () => (
+const GALLERY_PHOTOS_PER_PAGE = 9;
+
+const GalleryPage = () => {
+  const [photoPage, setPhotoPage] = useState(1);
+  const photosSectionRef = useRef<HTMLDivElement>(null);
+  const totalPhotoPages = Math.max(1, Math.ceil(GALLERY_PHOTOS.length / GALLERY_PHOTOS_PER_PAGE));
+  const photoStart = (photoPage - 1) * GALLERY_PHOTOS_PER_PAGE;
+  const pagedPhotos = GALLERY_PHOTOS.slice(photoStart, photoStart + GALLERY_PHOTOS_PER_PAGE);
+
+  const goToPhotoPage = (page: number) => {
+    const next = Math.min(totalPhotoPages, Math.max(1, page));
+    setPhotoPage(next);
+    photosSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
+  return (
   <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.5 }} className="pb-24 overflow-hidden">
     <section className="bg-wetland-dark py-40 text-center text-white relative overflow-hidden">
       <img src="/gallery/sudd-waterway-reeds.png" alt="" className="absolute inset-0 w-full h-full object-cover opacity-35" aria-hidden />
@@ -2309,30 +2363,116 @@ const GalleryPage = () => (
           <span className="text-[10px] font-black uppercase tracking-[0.4em] text-wetland-accent mb-6 block">Visual Archive</span>
           <h1 className="text-6xl md:text-8xl font-display font-black mb-8 tracking-tighter leading-none">Gallery.</h1>
           <p className="text-wetland-accent/70 text-xl max-w-2xl mx-auto font-light leading-relaxed">
-            Field photographs from hydrology surveys, livelihoods work, and water infrastructure across South Sudan.
+            Field photographs and video from hydrology surveys, livelihoods work, and water infrastructure across South Sudan.
           </p>
         </FadeInSection>
       </div>
     </section>
-    <div className="content-section mt-16 columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
-      {GALLERY_PHOTOS.map((photo, i) => (
-        <FadeInSection key={photo.src} delay={(i % 6) * 0.05}>
-          <figure className="break-inside-avoid mb-6 group overflow-hidden rounded-[2rem] border border-slate-100 bg-white shadow-sm">
-            <img
-              src={photo.src}
-              alt={photo.title}
-              className="w-full object-cover group-hover:scale-[1.03] transition-transform duration-700"
-            />
-            <figcaption className="p-6">
-              <h3 className="font-display font-black text-slate-900 text-lg mb-1">{photo.title}</h3>
-              <p className="text-sm text-slate-500 font-light leading-relaxed">{photo.caption}</p>
-            </figcaption>
-          </figure>
+
+    <div className="content-section mt-16">
+      <FadeInSection>
+        <div className="mb-10">
+          <span className="text-[10px] font-black uppercase tracking-[0.3em] text-nile-blue">Moving Image</span>
+          <h2 className="text-3xl md:text-4xl font-display font-black text-water-dark mt-3">Field videos</h2>
+          <p className="text-slate-500 font-light mt-3 max-w-2xl">
+            Short clips from field visits and community work — play directly in the gallery.
+          </p>
+        </div>
+      </FadeInSection>
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 mb-20">
+        {GALLERY_VIDEOS.map((video, i) => (
+          <FadeInSection key={video.src} delay={(i % 3) * 0.08}>
+            <figure className="overflow-hidden rounded-[2rem] border border-slate-100 bg-white shadow-sm h-full flex flex-col">
+              <video
+                controls
+                playsInline
+                preload="metadata"
+                poster={video.src.replace('.mp4', '-thumb.jpg')}
+                className="w-full aspect-video bg-slate-900 object-cover"
+              >
+                <source src={video.src} type="video/mp4" />
+              </video>
+              <figcaption className="p-6">
+                <h3 className="font-display font-black text-slate-900 text-lg mb-1">{video.title}</h3>
+                <p className="text-sm text-slate-500 font-light leading-relaxed">{video.caption}</p>
+              </figcaption>
+            </figure>
+          </FadeInSection>
+        ))}
+      </div>
+
+      <div ref={photosSectionRef}>
+        <FadeInSection>
+          <div className="mb-10 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+            <div>
+              <span className="text-[10px] font-black uppercase tracking-[0.3em] text-nile-blue">Still Images</span>
+              <h2 className="text-3xl md:text-4xl font-display font-black text-water-dark mt-3">Photographs</h2>
+            </div>
+            <p className="text-sm text-slate-400 font-medium">
+              Showing {photoStart + 1}–{Math.min(photoStart + GALLERY_PHOTOS_PER_PAGE, GALLERY_PHOTOS.length)} of {GALLERY_PHOTOS.length}
+            </p>
+          </div>
         </FadeInSection>
-      ))}
+        <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
+          {pagedPhotos.map((photo, i) => (
+            <FadeInSection key={`${photo.src}-${photoPage}`} delay={(i % 6) * 0.05}>
+              <figure className="break-inside-avoid mb-6 group overflow-hidden rounded-[2rem] border border-slate-100 bg-white shadow-sm">
+                <img
+                  src={photo.src}
+                  alt={photo.title}
+                  className="w-full object-cover group-hover:scale-[1.03] transition-transform duration-700"
+                />
+                <figcaption className="p-6">
+                  <h3 className="font-display font-black text-slate-900 text-lg mb-1">{photo.title}</h3>
+                  <p className="text-sm text-slate-500 font-light leading-relaxed">{photo.caption}</p>
+                </figcaption>
+              </figure>
+            </FadeInSection>
+          ))}
+        </div>
+
+        {totalPhotoPages > 1 && (
+          <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <button
+              type="button"
+              onClick={() => goToPhotoPage(photoPage - 1)}
+              disabled={photoPage === 1}
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl border-2 border-slate-100 text-xs font-black uppercase tracking-widest text-slate-600 hover:border-slate-900 hover:bg-slate-900 hover:text-white transition-all disabled:opacity-40 disabled:pointer-events-none"
+            >
+              <ChevronLeft size={16} /> Previous
+            </button>
+            <div className="flex flex-wrap items-center justify-center gap-2">
+              {Array.from({ length: totalPhotoPages }, (_, i) => i + 1).map((page) => (
+                <button
+                  key={page}
+                  type="button"
+                  onClick={() => goToPhotoPage(page)}
+                  aria-current={page === photoPage ? 'page' : undefined}
+                  className={`w-11 h-11 rounded-xl text-sm font-black transition-all ${
+                    page === photoPage
+                      ? 'bg-nile-blue text-white'
+                      : 'bg-slate-100 text-slate-500 hover:bg-slate-900 hover:text-white'
+                  }`}
+                >
+                  {page}
+                </button>
+              ))}
+            </div>
+            <button
+              type="button"
+              onClick={() => goToPhotoPage(photoPage + 1)}
+              disabled={photoPage === totalPhotoPages}
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl border-2 border-slate-100 text-xs font-black uppercase tracking-widest text-slate-600 hover:border-slate-900 hover:bg-slate-900 hover:text-white transition-all disabled:opacity-40 disabled:pointer-events-none"
+            >
+              Next <ChevronRight size={16} />
+            </button>
+          </div>
+        )}
+      </div>
     </div>
   </motion.div>
-);
+  );
+};
 
 export function App() {
   const location = useLocation();

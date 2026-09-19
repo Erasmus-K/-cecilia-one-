@@ -1068,7 +1068,7 @@ const HomePage = () => {
                 title: "Joint Expedition with Global Hydrology Partners Completes Wetland Biomass Survey",
                 category: "Research",
                 date: "March 28, 2026",
-                image: "/gallery/field-boat-researcher.jpg"
+                image: "/gallery/aerial-floodplain.jpg"
               },
               {
                 title: "Press Release: Conclusion of the Sudd Wetland Hybrid Global Conference",

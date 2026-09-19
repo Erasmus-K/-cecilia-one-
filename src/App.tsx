@@ -83,6 +83,18 @@ const KNOWLEDGE_BASE: KnowledgeEntry[] = [
     tags: ["conference", "press", "sudd", "global", "wetland"],
     type: "Press release",
   },
+  {
+    title: "Press Release on First Conference with Wake Forest University",
+    summary: "Official release on the WNSC–Wake Forest hybrid conference on climate impacts on the Sudd Wetland.",
+    tags: ["press", "conference", "wake forest", "sudd", "wfu"],
+    type: "Press release",
+  },
+  {
+    title: "Congratulatory Message to H.E. Salva Kiir Mayardit",
+    summary: "WNSC congratulates the President on signing accession to the Nile Basin Cooperative Framework Agreement.",
+    tags: ["press", "cfa", "nile basin", "salva kiir", "accession"],
+    type: "Press release",
+  },
 ];
 
 /** Official mark (Cloudinary); used in header and footer. */
@@ -127,6 +139,108 @@ const MILESTONE_STORIES = [
     href: 'https://www.facebook.com/share/p/17Uckpztwh/',
     source: 'Facebook',
     SourceIcon: Facebook,
+  },
+] as const;
+
+const GALLERY_PHOTOS = [
+  { src: '/gallery/aerial-nile-wetland.jpg', title: 'White Nile wetland basin', caption: 'Aerial view of the river corridor and floodplain.' },
+  { src: '/gallery/aerial-river-basin.jpg', title: 'Hydrology basin', caption: 'Wide river channel through the Sudd landscape.' },
+  { src: '/gallery/aerial-river-bend.jpg', title: 'River bend', caption: 'Meandering waters and riparian vegetation.' },
+  { src: '/gallery/aerial-floodplain.jpg', title: 'Floodplain monitoring', caption: 'Active observation of wetland hydrology from altitude.' },
+  { src: '/gallery/aerial-community-road.jpg', title: 'Communities & access', caption: 'Settlements along rural corridors near wetland systems.' },
+  { src: '/gallery/riverbank-wetland.jpg', title: 'Climate & shoreline', caption: 'Riverbank conditions under climate stress.' },
+  { src: '/gallery/earth-mound-riverside.jpg', title: 'Riverside landscape', caption: 'Landforms along the water edge.' },
+  { src: '/gallery/field-livelihoods-discussion.jpg', title: 'Sudd livelihoods', caption: 'Community dialogue on land and food security.' },
+  { src: '/gallery/agricultural-plows.jpg', title: 'Agricultural resilience', caption: 'Equipment supporting local farming livelihoods.' },
+  { src: '/gallery/onion-storage-thatch-shed.png', title: 'Post-harvest onion store', caption: 'Traditional thatch shed storing a community onion harvest.' },
+  { src: '/gallery/onion-storage-mesh-gate.png', title: 'Secure produce storage', caption: 'Locked mesh storehouse protecting harvested onions.' },
+  { src: '/gallery/kardoba-solar-water-yard.jpg', title: 'Solar water yard', caption: 'Kardoba–Etom solar-powered water infrastructure.' },
+  { src: '/gallery/solar-water-tower.jpg', title: 'Water infrastructure', caption: 'Solar-powered tower serving rural communities.' },
+  { src: '/gallery/elevated-water-tower.png', title: 'Elevated water tower', caption: 'Fenced elevated tank supporting rural water supply.' },
+  { src: '/gallery/brefons-borehole-sign.jpg', title: 'BREFONS borehole', caption: 'Namanagapere water-powered borehole project site.' },
+  { src: '/gallery/brefons-kapoeta-veterinary-clinic.png', title: 'BREFONS Kapoeta clinic', caption: 'Veterinary Clinic and Vaccination Center, Kapoeta South County.' },
+  { src: '/gallery/facility-mesh-enclosure.png', title: 'Field facility compound', caption: 'Secure mesh enclosure at a rural project facility.' },
+  { src: '/gallery/mega-motors-cargo-tricycles.png', title: 'Field transport fleet', caption: 'Cargo tricycles supporting logistics and outreach operations.' },
+  { src: '/gallery/field-boat-researcher.jpg', title: 'Field research', caption: 'On-water survey and environmental monitoring.' },
+  { src: '/gallery/research-boat-dock.jpg', title: 'River operations', caption: 'Boat operations supporting research and outreach.' },
+  { src: '/gallery/river-boat-wake-sky.png', title: 'River transit', caption: 'Boat wake across open water toward the wetland shoreline.' },
+  { src: '/gallery/river-boat-wetland-passage.png', title: 'Wetland passage', caption: 'On-river travel through reed-lined White Nile corridors.' },
+  { src: '/gallery/savanna-landscape.jpg', title: 'Regional landscape', caption: 'Savanna and scrub ecosystems in the wider basin.' },
+  { src: '/gallery/field-whatsapp-01.jpg', title: 'Conference group portrait', caption: 'Delegates with yellow lanyards at a WNSC gathering in Juba.' },
+  { src: '/gallery/field-whatsapp-02.jpg', title: 'Workshop attendees', caption: 'Stakeholders pose after a White Nile and Sudd Centre conference session.' },
+  { src: '/gallery/field-whatsapp-03.jpg', title: 'Delegates at Centre sign', caption: 'Participants photographed in front of the WNSC welcome display.' },
+  { src: '/gallery/field-whatsapp-04.jpg', title: 'National experts group photo', caption: 'Participants and national experts at a WNSC plenary session.' },
+  { src: '/gallery/field-whatsapp-05.jpg', title: 'Basin meeting portrait', caption: 'Experts and partners assembled for a Nile and Sudd basin meeting.' },
+  { src: '/gallery/field-whatsapp-06.jpg', title: 'Closing session portrait', caption: 'Conference participants mark the occasion with a commemorative group photo.' },
+  { src: '/gallery/field-whatsapp-07.jpg', title: 'Diverse delegates portrait', caption: 'Facilitators and attendees at a WNSC workshop group photo.' },
+  { src: '/gallery/field-whatsapp-08.jpg', title: 'Workshop table session', caption: 'Participants review notes and materials during a working meeting.' },
+  { src: '/gallery/field-whatsapp-09.jpg', title: 'Forum group portrait', caption: 'Delegates gather after a plenary at a WNSC conference.' },
+  { src: '/gallery/field-whatsapp-10.jpg', title: 'Partner planning meeting', caption: 'Stakeholders consult over documents in a breakout session.' },
+  { src: '/gallery/field-whatsapp-11.jpg', title: 'Map review discussion', caption: 'Colleagues examine charts during a technical planning session.' },
+  { src: '/gallery/field-whatsapp-12.jpg', title: 'Breakout dialogue', caption: 'Facilitators and partners exchange views around a workshop table.' },
+  { src: '/gallery/field-whatsapp-13.jpg', title: 'Small group table work', caption: 'A breakout team works with laptops and papers in a conference hall.' },
+  { src: '/gallery/field-whatsapp-14.jpg', title: 'Facilitated table dialogue', caption: 'A working group discussion during a WNSC conference side session.' },
+  { src: '/gallery/field-whatsapp-15.jpg', title: 'Laptop working session', caption: 'Delegates use shared materials in a focused breakout for Centre planning.' },
+  { src: '/gallery/field-whatsapp-16.jpg', title: 'Active group deliberation', caption: 'Participants debate priorities at a WNSC workshop table.' },
+  { src: '/gallery/field-whatsapp-17.jpg', title: 'Breakout consultation', caption: 'Structured dialogue among partners at a Centre conference session.' },
+  { src: '/gallery/field-whatsapp-18.jpg', title: 'Workshop documentation', caption: 'Attendees complete paperwork during a WNSC working segment.' },
+  { src: '/gallery/field-whatsapp-19.jpg', title: 'Refreshment break talks', caption: 'A working group continues conversation between conference sessions.' },
+  { src: '/gallery/field-whatsapp-20.jpg', title: 'VIP delegates in Juba', caption: 'Participants with VIP badges at Pyramid Continental Hotel during a basin meeting.' },
+  { src: '/gallery/field-whatsapp-21.jpg', title: 'Plenary audience', caption: 'Delegates listen from conference tables during a WNSC plenary.' },
+  { src: '/gallery/field-whatsapp-22.jpg', title: 'Between sessions', caption: 'Participants share a moment between sessions at a Centre event.' },
+  { src: '/gallery/field-whatsapp-23.jpg', title: 'Partners in hotel lobby', caption: 'Delegates by Pyramid Continental Hotel signage during Centre conference activities.' },
+  { src: '/gallery/radio-miraya-isaac-tong.png', title: 'Radio Miraya interview', caption: 'Isaac Liabwel and Tong Deng at Radio Miraya discussing water, peace, and Sudd governance.' },
+  { src: '/gallery/flooded-settlement-telecom.png', title: 'Flooded settlement', caption: 'Muddy access and standing water around tukuls and local infrastructure.' },
+  { src: '/gallery/sudd-marsh-floodplain.png', title: 'Sudd marsh floodplain', caption: 'Shallow wetland waters and seasonal marsh vegetation under an overcast sky.' },
+  { src: '/gallery/rutted-wetland-tracks.png', title: 'Wetland access tracks', caption: 'Vehicle ruts filled with standing water across a waterlogged landscape.' },
+  { src: '/gallery/community-field-visit.png', title: 'Community field visit', caption: 'Stakeholders and community leaders meeting during a rural site visit.' },
+  { src: '/gallery/pdo-presentation-session.png', title: 'Project objectives briefing', caption: 'Presenter outlining project development objectives and regional climate context.' },
+  { src: '/gallery/wetland-lily-pads.png', title: 'Wetland aquatic flora', caption: 'Lily pads and floating vegetation across a calm river corridor.' },
+  { src: '/gallery/sudd-waterway-reeds.png', title: 'Sudd waterway', caption: 'Open water bordered by dense reeds in the Sudd wetland system.' },
+  { src: '/gallery/abyei-makuac-flooding.png', title: 'Abyei Makuac flooding', caption: 'Flooded settlement conditions with temporary shelter in Abyei Makuac.' },
+  { src: '/gallery/wnsc-foyer-pyramid-hotel.png', title: 'WNSC at Pyramid Hotel', caption: 'Delegates beside the White Nile and Sudd Centre foyer display in Juba.' },
+  { src: '/gallery/conference-colleagues-sofa.png', title: 'Conference colleagues', caption: 'Participants sharing a moment between sessions at a WNSC event.' },
+  { src: '/gallery/wnsc-moderator-portrait.png', title: 'WNSC moderator', caption: 'Event moderator wearing a White Nile and Sudd Centre badge.' },
+] as const;
+
+const PRESS_RELEASES = [
+  {
+    title: 'Press Release on First Conference with Wake Forest University',
+    category: 'Press Release',
+    date: 'May 2, 2026',
+    image: '/gallery/aerial-river-basin.jpg',
+    summary:
+      'Official release on the WNSC and Wake Forest University hybrid global conference on climate change impacts on the Sudd Wetland, convened in Juba with community, scientific, and government participants.',
+    file: '/press/press-release-first-conference-wfu.pdf',
+  },
+  {
+    title: 'Press Release on Conclusion of the Sudd Wetland Hybrid Global Conference',
+    category: 'Press Release',
+    date: 'May 2, 2026',
+    image: '/sudd-wetland-conference-linkedin.jpg',
+    summary:
+      'Joint WNSC and Wake Forest University statement on outcomes from the Sudd Wetland hybrid global conference on climate impacts and wetland resilience.',
+    file: '/press-release-sudd-wetland-conference-may-2026.pdf',
+  },
+  {
+    title: 'Congratulatory Message to H.E. Salva Kiir Mayardit',
+    category: 'Press Release',
+    date: 'August 10, 2024',
+    image: '/wnsc-facebook-2.jpg',
+    summary:
+      'Jubilant message from the WNSC Board of Trustees congratulating H.E. Salva Kiir Mayardit on signing South Sudan’s accession instrument to the Nile Basin Cooperative Framework Agreement.',
+    file: '/press/congratulatory-message-salva-kiir-mayardit.pdf',
+  },
+] as const;
+
+const NEWS_UPDATES = [
+  {
+    title: 'Isaac Liabwel and Tong Deng on Radio Miraya',
+    category: 'Media',
+    date: '2026',
+    image: '/gallery/radio-miraya-isaac-tong.png',
+    summary:
+      'Isaac Liabwel and Tong Deng on Radio Miraya this morning discussing water, peace, and the future: governing the Sudd Wetland for national stability.',
   },
 ] as const;
 
@@ -429,6 +543,9 @@ const Navbar = () => {
     { name: 'Home', path: '/' },
     { name: 'About Us', path: '/about' },
     { name: 'Research', path: '/research' },
+    { name: 'Resources', path: '/resources' },
+    { name: 'News', path: '/news' },
+    { name: 'Gallery', path: '/gallery' },
     { name: 'Partnerships', path: '/partnerships' },
     { name: 'Contact', path: '/contact' },
   ];
@@ -470,14 +587,14 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center gap-10">
-          <div className="flex items-center gap-8">
+        <div className="hidden lg:flex items-center gap-4 xl:gap-6">
+          <div className="flex items-center gap-3 xl:gap-5">
             {navLinks.map((link) => (
               link.path.startsWith('/#') ? (
                 <button
                   key={link.path}
                   onClick={() => handleNavClick(link.path)}
-                  className="text-sm font-semibold text-slate-600 hover:text-nile-blue transition-colors relative group py-2"
+                  className="text-xs xl:text-sm font-semibold text-slate-600 hover:text-nile-blue transition-colors relative group py-2 whitespace-nowrap"
                 >
                   {link.name}
                   <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-nile-blue transition-all duration-300 group-hover:w-full" />
@@ -486,7 +603,7 @@ const Navbar = () => {
                 <Link
                   key={link.path}
                   to={link.path}
-                  className={`text-sm font-semibold transition-colors relative group py-2 ${
+                  className={`text-xs xl:text-sm font-semibold transition-colors relative group py-2 whitespace-nowrap ${
                     location.pathname === link.path ? 'text-nile-blue' : 'text-slate-600 hover:text-nile-blue'
                   }`}
                 >
@@ -499,7 +616,7 @@ const Navbar = () => {
 
           <Link 
             to="/contact" 
-            className="px-8 py-3 bg-nile-blue text-white text-sm font-bold rounded-full shadow-lg hover:shadow-nile-blue/20 transform transition-all duration-200 hover:-translate-y-0.5 active:scale-95"
+            className="px-6 xl:px-8 py-3 bg-nile-blue text-white text-sm font-bold rounded-full shadow-lg hover:shadow-nile-blue/20 transform transition-all duration-200 hover:-translate-y-0.5 active:scale-95 whitespace-nowrap"
           >
             Get Involved
           </Link>
@@ -507,7 +624,7 @@ const Navbar = () => {
 
         {/* Mobile Menu Toggle */}
         <button 
-          className="md:hidden p-2 text-slate-700 hover:bg-slate-100 rounded-lg transition-colors" 
+          className="lg:hidden p-2 text-slate-700 hover:bg-slate-100 rounded-lg transition-colors" 
           onClick={() => setIsOpen(!isOpen)}
           aria-label={isOpen ? "Close menu" : "Open menu"}
           aria-expanded={isOpen}
@@ -524,7 +641,7 @@ const Navbar = () => {
             animate={{ opacity: 1, scaleY: 1 }}
             exit={{ opacity: 0, scaleY: 0 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className="md:hidden absolute top-full left-0 right-0 bg-white border-t border-slate-100 shadow-xl overflow-hidden"
+            className="lg:hidden absolute top-full left-0 right-0 bg-white border-t border-slate-100 shadow-xl overflow-hidden"
           >
             <div className="flex flex-col p-6 gap-2">
               {navLinks.map((link) => (
@@ -651,23 +768,28 @@ const Footer = () => (
             </h4>
             <ul className="space-y-3 text-sm text-water-light/65">
               <li>
+                <Link to="/resources" className="transition-colors hover:text-white">
+                  Resource Centre
+                </Link>
+              </li>
+              <li>
                 <Link to="/research" className="transition-colors hover:text-white">
                   Scientific Archive
                 </Link>
               </li>
               <li>
-                <Link to="/research" className="transition-colors hover:text-white">
-                  Environmental Impact
+                <Link to="/news" className="transition-colors hover:text-white">
+                  News & Briefings
+                </Link>
+              </li>
+              <li>
+                <Link to="/gallery" className="transition-colors hover:text-white">
+                  Photo Gallery
                 </Link>
               </li>
               <li>
                 <Link to="/partnerships" className="transition-colors hover:text-white">
                   Strategic Partners
-                </Link>
-              </li>
-              <li>
-                <Link to="/contact" className="transition-colors hover:text-white">
-                  Stakeholder Briefing
                 </Link>
               </li>
             </ul>
@@ -743,19 +865,19 @@ const HomePage = () => {
       title: "Hydrology Basin",
       icon: <Droplet className="text-water-blue" />,
       desc: "Deep scientific research into the intricate water systems and flow dynamics of the White Nile Basin and the broader Region ecosystem/biodiversity.",
-      image: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&q=80&w=800"
+      image: "/gallery/aerial-nile-wetland.jpg"
     },
     {
       title: "Climate Risks",
       icon: <CloudRain className="text-wetland-green" />,
       desc: "Mitigating Risks associated with unprecedented flooding and persistent seasonal droughts within the White Nile River Corridors.",
-      image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80&w=800"
+      image: "/gallery/riverbank-wetland.jpg"
     },
     {
       title: "Sudd Livelihoods",
       icon: <Users className="text-water-dark" />,
       desc: "Ensuring the Sudd Wetlands Continue to support millions of livelihoods and variety of fauna through extensive flora and development and management.",
-      image: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&q=80&w=800"
+      image: "/gallery/field-livelihoods-discussion.jpg"
     }
   ];
 
@@ -889,7 +1011,7 @@ const HomePage = () => {
               <span className="text-xs font-bold uppercase tracking-[0.3em] text-nile-blue">Media Centre</span>
               <h2 className="text-4xl font-bold text-water-dark mt-4">Current Scientific Briefings</h2>
             </div>
-            <Link to="/research" className="text-nile-blue font-bold flex items-center gap-2 group underline decoration-2 underline-offset-8 decoration-nile-blue/20 hover:decoration-nile-blue transition-all">
+            <Link to="/news" className="text-nile-blue font-bold flex items-center gap-2 group underline decoration-2 underline-offset-8 decoration-nile-blue/20 hover:decoration-nile-blue transition-all">
               View All Press Releases <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
@@ -900,19 +1022,19 @@ const HomePage = () => {
                 title: "WNSC Submits White Paper on Sudd Basin Management to Regional Stakeholders",
                 category: "Policy",
                 date: "April 15, 2026",
-                image: "https://images.unsplash.com/photo-1454165205744-3b78555e5572?auto=format&fit=crop&q=80&w=800"
+                image: "/gallery/brefons-borehole-sign.jpg"
               },
               {
                 title: "Joint Expedition with Global Hydrology Partners Completes Wetland Biomass Survey",
                 category: "Research",
                 date: "March 28, 2026",
-                image: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&q=80&w=800"
+                image: "/gallery/field-boat-researcher.jpg"
               },
               {
                 title: "Press Release: Conclusion of the Sudd Wetland Hybrid Global Conference",
                 category: "Climate",
                 date: "May 2, 2026",
-                image: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=80&w=800"
+                image: "/gallery/aerial-river-basin.jpg"
               }
             ].map((news, i) => (
               <motion.div 
@@ -1082,10 +1204,9 @@ const AboutPage = () => {
               <div className="relative">
                 <div className="absolute -top-10 -left-10 w-60 h-60 bg-nile-blue/10 rounded-full blur-3xl animate-pulse" />
                 <img 
-                  src="https://images.unsplash.com/photo-1544465544-1b71aee9dfa3?auto=format&fit=crop&q=80&w=800" 
+                  src="/gallery/aerial-floodplain.jpg" 
                   className="rounded-[4rem] shadow-2xl relative z-10 border-8 border-white"
                   alt="Environmental Leadership"
-                  referrerPolicy="no-referrer"
                 />
                 <div className="absolute -bottom-10 -right-6 bg-white p-8 rounded-3xl shadow-2xl z-20 flex items-center gap-5 border border-slate-50">
                   <div className="w-16 h-16 bg-wetland-green rounded-2xl flex items-center justify-center text-white shadow-xl shadow-wetland-green/20">
@@ -1410,18 +1531,16 @@ const AboutPage = () => {
               <div className="grid grid-cols-2 gap-8">
                 <FadeInSection delay={0.4} y={30}>
                   <img 
-                    src="https://images.unsplash.com/photo-1439066615861-d1af74d74000?auto=format&fit=crop&q=80&w=600" 
+                    src="/gallery/research-boat-dock.jpg" 
                     className="w-full aspect-[4/5] object-cover rounded-[3rem] shadow-2xl border-4 border-white"
                     alt="Water Research"
-                    referrerPolicy="no-referrer"
                   />
                 </FadeInSection>
                 <FadeInSection delay={0.5} y={-30}>
                   <img 
-                    src="https://images.unsplash.com/photo-1544465544-1b71aee9dfa3?auto=format&fit=crop&q=80&w=600" 
+                    src="/gallery/kardoba-solar-water-yard.jpg" 
                     className="w-full aspect-[4/5] object-cover rounded-[3rem] shadow-2xl translate-y-12 border-4 border-white"
                     alt="Field Operations"
-                    referrerPolicy="no-referrer"
                   />
                 </FadeInSection>
               </div>
@@ -1984,6 +2103,236 @@ const ContactPage = () => {
 
 // --- Main App ---
 
+const RESOURCE_DOCUMENTS = [
+  {
+    title: 'WNSC Final Draft Charter',
+    date: '9 June 2023',
+    category: 'Governance',
+    type: 'Official Charter',
+    summary:
+      'Founding charter establishing the White Nile and Sudd Centre as a juridical think tank, including vision, mission, governance structure, and operational mandate.',
+    file: '/resources/wnsc-final-draft-charter-9-june-2023.pdf',
+  },
+  {
+    title: 'WNSC Concept Note',
+    date: '23 October 2022',
+    category: 'Strategy',
+    type: 'Concept Note',
+    summary:
+      'Foundational concept note outlining context, rationale, and strategic framing for the White Nile and Sudd Centre in Juba, Republic of South Sudan.',
+    file: '/resources/wnsc-concept-note.pdf',
+  },
+  {
+    title: 'Urgent Memo on Water Resources and Wetlands',
+    date: '25 July 2022',
+    category: 'Advocacy',
+    type: 'Official Memo',
+    summary:
+      'Urgent memo from South Sudan national experts to H.E. Salva Kiir Mayardit on preservation, management, and development of water resources and wetlands, including concerns on river dredging and the Jonglei Canal.',
+    file: '/resources/urgent-memo-water-resources-wetlands.pdf',
+  },
+] as const;
+
+const ResourcesPage = () => (
+  <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.5 }} className="pb-24 overflow-hidden">
+    <section className="bg-water-dark py-40 text-center text-white relative overflow-hidden">
+      <img src="/gallery/aerial-nile-wetland.jpg" alt="" className="absolute inset-0 w-full h-full object-cover opacity-25" aria-hidden />
+      <div className="content-section relative z-10">
+        <FadeInSection y={30}>
+          <span className="text-[10px] font-black uppercase tracking-[0.4em] text-water-light/40 mb-6 block">Knowledge Hub</span>
+          <h1 className="text-6xl md:text-8xl font-display font-black mb-8 tracking-tighter leading-none">Resources.</h1>
+          <p className="text-water-light/60 text-xl max-w-2xl mx-auto font-light leading-relaxed">
+            Official documents, briefings, and tools for partners working on White Nile and Sudd wetland resilience.
+          </p>
+        </FadeInSection>
+      </div>
+    </section>
+
+    <div className="content-section -mt-16 relative z-10">
+      <FadeInSection>
+        <div className="mb-10">
+          <span className="text-[10px] font-black uppercase tracking-[0.3em] text-nile-blue">Official Documents</span>
+          <h2 className="text-3xl md:text-4xl font-display font-black text-water-dark mt-3">Downloadable PDFs</h2>
+        </div>
+      </FadeInSection>
+      <div className="grid grid-cols-1 gap-6 mb-20">
+        {RESOURCE_DOCUMENTS.map((doc, i) => (
+          <FadeInSection key={doc.file} delay={i * 0.08}>
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-8 p-10 bg-white border border-slate-100 rounded-[3rem] shadow-sm hover:border-nile-blue/30 hover:shadow-xl transition-all">
+              <div className="space-y-4 max-w-3xl">
+                <div className="flex flex-wrap items-center gap-3">
+                  <span className="px-4 py-1.5 rounded-full bg-slate-100 text-[9px] font-black uppercase tracking-widest text-slate-500">{doc.category}</span>
+                  <span className="text-[10px] font-black text-nile-blue uppercase tracking-widest">{doc.type}</span>
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400">{doc.date}</span>
+                </div>
+                <h3 className="text-2xl font-display font-black text-slate-900 leading-tight">{doc.title}</h3>
+                <p className="text-slate-500 font-light leading-relaxed">{doc.summary}</p>
+              </div>
+              <a
+                href={doc.file}
+                download
+                className="shrink-0 px-8 py-4 border-2 border-slate-100 rounded-2xl font-bold text-sm text-slate-600 hover:bg-slate-900 hover:text-white hover:border-slate-900 inline-flex items-center justify-center gap-3 transition-all"
+              >
+                Download PDF <Download size={20} className="text-nile-blue" />
+              </a>
+            </div>
+          </FadeInSection>
+        ))}
+      </div>
+    </div>
+
+    <div className="content-section grid grid-cols-1 md:grid-cols-3 gap-8">
+      {[
+        { title: 'Scientific Archive', desc: 'Reports, conference proceedings, and technical papers from the WNSC knowledge base.', to: '/research', icon: <FileText size={28} /> },
+        { title: 'Press & Media', desc: 'Official press releases and stakeholder briefings, including the Sudd Wetland conference.', to: '/news', icon: <Globe size={28} /> },
+        { title: 'Field Gallery', desc: 'Photographs from field operations, livelihoods work, and basin monitoring.', to: '/gallery', icon: <Droplet size={28} /> },
+      ].map((item, i) => (
+        <FadeInSection key={item.title} delay={i * 0.1}>
+          <Link to={item.to} className="block h-full bg-white rounded-[3rem] border border-slate-100 p-10 shadow-sm hover:shadow-2xl hover:border-nile-blue/30 transition-all group">
+            <div className="w-16 h-16 rounded-2xl bg-nile-blue/10 text-nile-blue flex items-center justify-center mb-8 group-hover:bg-nile-blue group-hover:text-white transition-colors">
+              {item.icon}
+            </div>
+            <h2 className="text-2xl font-display font-black text-slate-900 mb-4">{item.title}</h2>
+            <p className="text-slate-500 font-light leading-relaxed mb-6">{item.desc}</p>
+            <span className="inline-flex items-center gap-2 text-nile-blue text-xs font-black uppercase tracking-widest">
+              Open <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+            </span>
+          </Link>
+        </FadeInSection>
+      ))}
+    </div>
+    <div className="content-section mt-20">
+      <FadeInSection>
+        <div className="bg-slate-50 rounded-[3.5rem] border border-slate-100 p-12 md:p-16 flex flex-col md:flex-row md:items-center justify-between gap-8">
+          <div className="max-w-xl">
+            <h2 className="text-3xl font-display font-black text-water-dark mb-4">Need another document?</h2>
+            <p className="text-slate-500 font-light leading-relaxed">
+              Contact the secretariat for additional publications, data requests, or partnership briefing packs.
+            </p>
+          </div>
+          <Link to="/contact" className="px-10 py-5 bg-nile-blue text-white font-bold rounded-2xl hover:bg-water-dark transition-all inline-flex items-center gap-3">
+            Contact Secretariat <ArrowRight size={18} />
+          </Link>
+        </div>
+      </FadeInSection>
+    </div>
+  </motion.div>
+);
+
+const NewsPage = () => (
+  <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.5 }} className="pb-24 overflow-hidden">
+    <section className="bg-nile-blue py-40 text-center text-white relative overflow-hidden">
+      <div className="absolute inset-0 opacity-15">
+        <img src="/gallery/aerial-river-basin.jpg" alt="" className="w-full h-full object-cover" aria-hidden />
+      </div>
+      <div className="content-section relative z-10">
+        <FadeInSection y={30}>
+          <span className="text-[10px] font-black uppercase tracking-[0.4em] text-white/40 mb-6 block">Media Centre</span>
+          <h1 className="text-6xl md:text-8xl font-display font-black mb-8 tracking-tighter leading-none">News.</h1>
+          <p className="text-water-light/70 text-xl max-w-2xl mx-auto font-light leading-relaxed">
+            Media appearances, updates, and official press releases from the White Nile and Sudd Centre.
+          </p>
+        </FadeInSection>
+      </div>
+    </section>
+
+    <div className="content-section -mt-12 relative z-10">
+      <FadeInSection>
+        <div className="mb-10">
+          <span className="text-[10px] font-black uppercase tracking-[0.3em] text-nile-blue">Latest Updates</span>
+          <h2 className="text-3xl md:text-4xl font-display font-black text-water-dark mt-3">In the media</h2>
+        </div>
+      </FadeInSection>
+      <div className="space-y-8 mb-20">
+        {NEWS_UPDATES.map((item, i) => (
+          <FadeInSection key={item.title} delay={i * 0.08}>
+            <article className="bg-white rounded-[3rem] border border-slate-100 shadow-sm overflow-hidden grid grid-cols-1 lg:grid-cols-12 hover:shadow-xl transition-shadow">
+              <div className="lg:col-span-4 h-56 lg:h-auto">
+                <img src={item.image} alt={item.title} className="w-full h-full object-cover min-h-[220px]" />
+              </div>
+              <div className="lg:col-span-8 p-10 md:p-12 flex flex-col justify-center">
+                <div className="flex flex-wrap items-center gap-3 mb-4">
+                  <span className="px-4 py-1.5 rounded-full bg-nile-blue/10 text-[10px] font-black uppercase tracking-widest text-nile-blue">{item.category}</span>
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400">{item.date}</span>
+                </div>
+                <h2 className="text-2xl md:text-3xl font-display font-black text-slate-900 mb-4 leading-tight">{item.title}</h2>
+                <p className="text-slate-500 font-light leading-relaxed">{item.summary}</p>
+              </div>
+            </article>
+          </FadeInSection>
+        ))}
+      </div>
+
+      <FadeInSection>
+        <div className="mb-10">
+          <span className="text-[10px] font-black uppercase tracking-[0.3em] text-nile-blue">Official Statements</span>
+          <h2 className="text-3xl md:text-4xl font-display font-black text-water-dark mt-3">Press releases</h2>
+        </div>
+      </FadeInSection>
+      <div className="space-y-8">
+        {PRESS_RELEASES.map((item, i) => (
+          <FadeInSection key={item.file} delay={i * 0.08}>
+            <article className="bg-white rounded-[3rem] border border-slate-100 shadow-sm overflow-hidden grid grid-cols-1 lg:grid-cols-12 hover:shadow-xl transition-shadow">
+              <div className="lg:col-span-4 h-56 lg:h-auto">
+                <img src={item.image} alt={item.title} className="w-full h-full object-cover min-h-[220px]" />
+              </div>
+              <div className="lg:col-span-8 p-10 md:p-12 flex flex-col justify-center">
+                <div className="flex flex-wrap items-center gap-3 mb-4">
+                  <span className="px-4 py-1.5 rounded-full bg-nile-blue/10 text-[10px] font-black uppercase tracking-widest text-nile-blue">{item.category}</span>
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400">{item.date}</span>
+                </div>
+                <h2 className="text-2xl md:text-3xl font-display font-black text-slate-900 mb-4 leading-tight">{item.title}</h2>
+                <p className="text-slate-500 font-light leading-relaxed mb-8">{item.summary}</p>
+                <a
+                  href={item.file}
+                  download
+                  className="inline-flex items-center gap-2 self-start px-6 py-3 border-2 border-slate-100 rounded-2xl text-nile-blue text-xs font-black uppercase tracking-widest hover:bg-slate-900 hover:text-white hover:border-slate-900 transition-all"
+                >
+                  Download PDF <Download size={16} />
+                </a>
+              </div>
+            </article>
+          </FadeInSection>
+        ))}
+      </div>
+    </div>
+  </motion.div>
+);
+
+const GalleryPage = () => (
+  <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.5 }} className="pb-24 overflow-hidden">
+    <section className="bg-wetland-dark py-40 text-center text-white relative overflow-hidden">
+      <img src="/gallery/sudd-waterway-reeds.png" alt="" className="absolute inset-0 w-full h-full object-cover opacity-35" aria-hidden />
+      <div className="content-section relative z-10">
+        <FadeInSection y={30}>
+          <span className="text-[10px] font-black uppercase tracking-[0.4em] text-wetland-accent mb-6 block">Visual Archive</span>
+          <h1 className="text-6xl md:text-8xl font-display font-black mb-8 tracking-tighter leading-none">Gallery.</h1>
+          <p className="text-wetland-accent/70 text-xl max-w-2xl mx-auto font-light leading-relaxed">
+            Field photographs from hydrology surveys, livelihoods work, and water infrastructure across South Sudan.
+          </p>
+        </FadeInSection>
+      </div>
+    </section>
+    <div className="content-section mt-16 columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
+      {GALLERY_PHOTOS.map((photo, i) => (
+        <FadeInSection key={photo.src} delay={(i % 6) * 0.05}>
+          <figure className="break-inside-avoid mb-6 group overflow-hidden rounded-[2rem] border border-slate-100 bg-white shadow-sm">
+            <img
+              src={photo.src}
+              alt={photo.title}
+              className="w-full object-cover group-hover:scale-[1.03] transition-transform duration-700"
+            />
+            <figcaption className="p-6">
+              <h3 className="font-display font-black text-slate-900 text-lg mb-1">{photo.title}</h3>
+              <p className="text-sm text-slate-500 font-light leading-relaxed">{photo.caption}</p>
+            </figcaption>
+          </figure>
+        </FadeInSection>
+      ))}
+    </div>
+  </motion.div>
+);
+
 export function App() {
   const location = useLocation();
 
@@ -1999,6 +2348,9 @@ export function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/research" element={<ResearchPage />} />
+          <Route path="/resources" element={<ResourcesPage />} />
+          <Route path="/news" element={<NewsPage />} />
+          <Route path="/gallery" element={<GalleryPage />} />
           <Route path="/partnerships" element={<PartnershipsPage />} />
           <Route path="/contact" element={<ContactPage />} />
         </Routes>

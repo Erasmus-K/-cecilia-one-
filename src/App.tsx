@@ -1329,7 +1329,7 @@ const AboutPage = () => {
                 </div>
                 <div className="lg:col-span-8 space-y-6 text-slate-600 text-lg leading-relaxed font-light">
                   <p>
-                    Hon. Joshua Dau Diu is the Chairman of the Board of Trustees of the White Nile and Sudd Centre since the inception of the centre in 2022. He is a dedicated theologian, pastor, and public servant with decades of leadership in religious and national affairs. Ordained as a Pastor in the Presbyterian Church in 1970, he earned a Master&apos;s degree in Theology in 1972 in Beirut, Lebanon.
+                    Hon. Joshua Dau Diu is the Chairman of the Board of Trustees of the White Nile and Sudd Centre since the inception of the centre in 2022. He led the foundation of WNSC through the mobilization of the national experts and chaired meetings regularly at DeHavana. During these sessions the experts agreed to establish and form a think tank known as the WNSC. This step was followed by the drafting of the WNSC constitution and registered with the government of South Sudan. He is a dedicated theologian, pastor, and public servant with decades of leadership in religious and national affairs. Ordained as a Pastor in the Presbyterian Church in 1970, he earned a Master&apos;s degree in Theology in 1972 in Beirut, Lebanon.
                   </p>
                   <p>
                     His early career was dedicated to theological education, serving as a lecturer at Bishop Tucker Theological College in Uganda (1975–1976) and St. Paul&apos;s Theological College in Kenya (1976–1978).

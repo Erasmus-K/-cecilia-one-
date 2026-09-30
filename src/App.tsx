@@ -1328,18 +1328,21 @@ const AboutPage = () => {
                   </p>
                 </div>
                 <div className="lg:col-span-8 space-y-6 text-slate-600 text-lg leading-relaxed font-light">
-                  <p>
-                    Hon. Joshua Dau Diu is the Chairman of the Board of Trustees of the White Nile and Sudd Centre since the inception of the centre in 2022. He led the foundation of WNSC through the mobilization of the national experts and chaired meetings regularly at DeHavana. During these sessions the experts agreed to establish and form a think tank known as the WNSC. This step was followed by the drafting of the WNSC constitution and registered with the government of South Sudan. He is a dedicated theologian, pastor, and public servant with decades of leadership in religious and national affairs. Ordained as a Pastor in the Presbyterian Church in 1970, he earned a Master&apos;s degree in Theology in 1972 in Beirut, Lebanon.
-                  </p>
-                  <p>
-                    His early career was dedicated to theological education, serving as a lecturer at Bishop Tucker Theological College in Uganda (1975–1976) and St. Paul&apos;s Theological College in Kenya (1976–1978).
-                  </p>
-                  <p>
-                    From 1978 to 2006, he served as Director for Religious Affairs for South Sudan and Sudan, fostering interfaith dialogue and strengthening church-state relations. Between 2006 and 2010, he chaired the Special Commission for the Rights of Non-Muslims in the National Capital, Khartoum, advocating for religious freedom and minority rights. He also participated in the CPA negotiations in Kenya as Secretary for Foreign Affairs of the Union of Sudan African Parties (USAP).
-                  </p>
-                  <p>
-                    Since 2011, he has been a Member of the Council of States in Juba, continuing his commitment to national unity and public service.
-                  </p>
+  <p>
+    Hon. Joshua Dau Diu is the Chairman of the Board of Trustees of the White Nile and Sudd Centre since the inception of the centre in 2022. He led the foundation of WNSC through the mobilization of the national experts and chaired meetings regularly at DeHavana. During these sessions the experts agreed to establish and form a think tank known as the WNSC. This step was followed by the drafting of the WNSC constitution and registered with the government of South Sudan.
+  </p>
+
+  <p>
+    He is a dedicated theologian, pastor, and public servant with decades of leadership in religious and national affairs. Ordained as a Pastor in the Presbyterian Church in 1970, he earned a Master&apos;s degree in Theology in 1972 in Beirut, Lebanon.
+  </p>
+
+  <p>
+    Throughout his distinguished career, he has remained committed to theological education, community service, peacebuilding, and the advancement of South Sudanese society through faith, leadership, and public service.
+  </p>
+
+  <p>
+    His early career was dedicated to theological education, serving as a lecturer at Bishop Tucker Theological College in Uganda (1975–1976) and St. Paul&apos;s Theological College in Kenya (1976–1978).
+  </p>
                 </div>
               </div>
             </article>
